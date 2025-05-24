@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dii1kpg3bm5nq"
-path="res://.godot/imported/CommonTree_2.fbx-88cef07c208d94e3254a33e89b81756c.scn"
+uid="uid://bfia2nrxytsx8"
+path="res://.godot/imported/Rock_2.fbx-887ddc147fc1c2836f6066f85a5a6366.scn"
 
 [deps]
 
-source_file="res://addons/assets/avec_collision/asset_origin/CommonTree_2.fbx"
-dest_files=["res://.godot/imported/CommonTree_2.fbx-88cef07c208d94e3254a33e89b81756c.scn"]
+source_file="res://addons/assets/assets_perso/asset_origin/Rock_2.fbx"
+dest_files=["res://.godot/imported/Rock_2.fbx-887ddc147fc1c2836f6066f85a5a6366.scn"]
 
 [params]
 

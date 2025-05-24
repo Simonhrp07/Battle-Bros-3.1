@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://1oapkpdh1ax7"
-path="res://.godot/imported/BirchTree_1.fbx-6f364254fdb9b9921c05835ad7ead1cc.scn"
+uid="uid://7q0q4buggb0d"
+path="res://.godot/imported/Rock_7.fbx-5a4e72ecc5e82924da86598f50aaee3d.scn"
 
 [deps]
 
-source_file="res://addons/assets/avec_collision/asset_origin/BirchTree_1.fbx"
-dest_files=["res://.godot/imported/BirchTree_1.fbx-6f364254fdb9b9921c05835ad7ead1cc.scn"]
+source_file="res://addons/assets/assets_perso/asset_origin/Rock_7.fbx"
+dest_files=["res://.godot/imported/Rock_7.fbx-5a4e72ecc5e82924da86598f50aaee3d.scn"]
 
 [params]
 

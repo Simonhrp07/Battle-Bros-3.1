@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dblkc4ycrflvc"
-path="res://.godot/imported/Rock_5.fbx-714c8f835ce780fce6ef8ebdf3e4394e.scn"
+uid="uid://1oapkpdh1ax7"
+path="res://.godot/imported/BirchTree_1.fbx-f5e555ae006d6919fb7660097acf0c58.scn"
 
 [deps]
 
-source_file="res://addons/assets/Ultimate Nature Pack by Quaternius/FBX/Rock_5.fbx"
-dest_files=["res://.godot/imported/Rock_5.fbx-714c8f835ce780fce6ef8ebdf3e4394e.scn"]
+source_file="res://addons/assets/assets_perso/asset_origin/BirchTree_1.fbx"
+dest_files=["res://.godot/imported/BirchTree_1.fbx-f5e555ae006d6919fb7660097acf0c58.scn"]
 
 [params]
 

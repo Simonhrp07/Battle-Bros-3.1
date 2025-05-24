@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://iac4tle0jiam"]
 
-[ext_resource type="PackedScene" uid="uid://dii1kpg3bm5nq" path="res://addons/assets/avec_collision/asset_origin/CommonTree_2.fbx" id="1_gj64u"]
+[ext_resource type="PackedScene" uid="uid://dii1kpg3bm5nq" path="res://addons/assets/assets_perso/asset_origin/CommonTree_2.fbx" id="1_gj64u"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_gj64u"]
 height = 4.15674

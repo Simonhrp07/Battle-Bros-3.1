@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci6ijdeyp3std"]
+
+[ext_resource type="PackedScene" uid="uid://c0rfc4oht3mqx" path="res://addons/assets/assets_perso/asset_origin/PineTree_4.fbx" id="1_xdygh"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fpi8w"]
+height = 2.93164
+
+[node name="Arbre4" type="Node3D"]
+
+[node name="PineTree_4" parent="." instance=ExtResource("1_xdygh")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PineTree_4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PineTree_4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1.16137, 0, 0, 0, 1, 0, 1.77267, 0)
+shape = SubResource("CylinderShape3D_fpi8w")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnffnvb5ntofx"]
 
-[ext_resource type="PackedScene" uid="uid://1oapkpdh1ax7" path="res://addons/assets/avec_collision/asset_origin/BirchTree_1.fbx" id="1_t4hc7"]
+[ext_resource type="PackedScene" uid="uid://1oapkpdh1ax7" path="res://addons/assets/assets_perso/asset_origin/BirchTree_1.fbx" id="1_t4hc7"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_t4hc7"]
 

@@ -9,7 +9,7 @@ extends CharacterBody3D
 var target_velocity = Vector3.ZERO
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = Vector3.ZERO
 
 	if Input.is_action_pressed("move_right"):
@@ -36,3 +36,16 @@ func _physics_process(delta):
 	# Moving the Character
 	velocity = target_velocity
 	move_and_slide()
+
+
+
+## @export var hp =40
+#@export var xp = 0
+#var expMax = 250
+#@export var dmgDistance = 5
+#@export var dmgMelee =10
+#
+#func _process(_delta):
+		#if Input.is_action_pressed("hpplus"):
+			#hp+=1
+			#print(hp)

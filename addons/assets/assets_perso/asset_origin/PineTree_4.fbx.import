@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bfia2nrxytsx8"
-path="res://.godot/imported/Rock_2.fbx-27fa22727c371561784614f604324b48.scn"
+uid="uid://c0rfc4oht3mqx"
+path="res://.godot/imported/PineTree_4.fbx-28bb05c3a34dca9897bb9ed2234a0313.scn"
 
 [deps]
 
-source_file="res://addons/assets/Ultimate Nature Pack by Quaternius/FBX/Rock_2.fbx"
-dest_files=["res://.godot/imported/Rock_2.fbx-27fa22727c371561784614f604324b48.scn"]
+source_file="res://addons/assets/assets_perso/asset_origin/PineTree_4.fbx"
+dest_files=["res://.godot/imported/PineTree_4.fbx-28bb05c3a34dca9897bb9ed2234a0313.scn"]
 
 [params]
 
