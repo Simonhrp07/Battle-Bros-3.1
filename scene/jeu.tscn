@@ -23,6 +23,7 @@ tonemap_mode = 2
 albedo_color = Color(0.181856, 0.266558, 4.81308e-08, 1)
 
 [node name="Jeu" type="Node3D"]
+transform = Transform3D(0.999821, -0.0154088, -0.0110217, 0.0154228, 0.99988, 0.00119482, 0.011002, -0.0013646, 0.999939, 0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_h8l20")
@@ -36,7 +37,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20641, 0)
 
 [node name="Terrain de base" type="CSGBox3D" parent="."]
-transform = Transform3D(0.999999, -7.25375e-07, -0.000754567, 0.000725546, 0.001, 0.000251902, 0.000754404, -2.52418e-07, 1, 0, 0, 0)
+transform = Transform3D(999.998, 0.00150539, 1.33145, -1.50617, 0.999999, 0.579913, -1.33057, -0.000581917, 999.999, 0, 0, 0)
 material_overlay = SubResource("StandardMaterial3D_aw23n")
 size = Vector3(500, 1, 500)
 
