@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://iac4tle0jiam"]
+
+[ext_resource type="PackedScene" uid="uid://dii1kpg3bm5nq" path="res://addons/assets/avec_collision/asset_origin/CommonTree_2.fbx" id="1_gj64u"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t2nb2"]
+
+[node name="Arbre2" type="Node3D"]
+
+[node name="CommonTree_2" parent="." instance=ExtResource("1_gj64u")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.93595, 0, 0, 0, 1.93595, 0, 0, 0, 1.35005, 0, 1.36452, 0)
+shape = SubResource("CapsuleShape3D_t2nb2")

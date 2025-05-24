@@ -1,19 +1,38 @@
 extends CharacterBody3D
 
-var speed = 5.0  # Vitesse de déplacement du personnage
+
+# How fast the player moves in meters per second.
+@export var speed = 14
+# The downward acceleration when in the air, in meters per second squared.
+@export var fall_acceleration = 75
+
+var target_velocity = Vector3.ZERO
+
 
 func _physics_process(delta):
-	# Récupérer l'entrée de l'utilisateur
-	var input_direction = Vector3(
-		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
-		0,
-		Input.get_action_strength("move_back") - Input.get_action_strength("move_forward")
-	).normalized()
+	var direction = Vector3.ZERO
 
-	# Calculer la direction de déplacement en fonction de la rotation du personnage
-	var transform_input = global_transform.basis.xform(input_direction)
-	velocity.x = transform_input.x * speed
-	velocity.z = transform_input.z * speed
+	if Input.is_action_pressed("move_right"):
+		direction.x += 1
+		print("d")
+	if Input.is_action_pressed("move_left"):
+		direction.x -= 1
+		print("q")
+	if Input.is_action_pressed("move_forward"):
+		direction.z -= 1
+		print("z")
+	if Input.is_action_pressed("move_backward"):
+		direction.z +=1
+		print("s")
+	
+	if direction != Vector3.ZERO:
+		direction = direction.normalized()
+		#$Pivot.basis = Basis.looking_at(direction)
 
-	# Appliquer le mouvement
+	# Ground Velocity
+	target_velocity.x = direction.x * speed
+	target_velocity.z = direction.z * speed
+
+	# Moving the Character
+	velocity = target_velocity
 	move_and_slide()

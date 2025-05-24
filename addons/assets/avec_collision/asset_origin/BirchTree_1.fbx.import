@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dii1kpg3bm5nq"
-path="res://.godot/imported/CommonTree_2.fbx-6c3978dee7d72cdb3d68c6c41cb6f88f.scn"
+uid="uid://1oapkpdh1ax7"
+path="res://.godot/imported/BirchTree_1.fbx-6f364254fdb9b9921c05835ad7ead1cc.scn"
 
 [deps]
 
-source_file="res://addons/assets/Ultimate Nature Pack by Quaternius/FBX/CommonTree_2.fbx"
-dest_files=["res://.godot/imported/CommonTree_2.fbx-6c3978dee7d72cdb3d68c6c41cb6f88f.scn"]
+source_file="res://addons/assets/avec_collision/asset_origin/BirchTree_1.fbx"
+dest_files=["res://.godot/imported/BirchTree_1.fbx-6f364254fdb9b9921c05835ad7ead1cc.scn"]
 
 [params]
 

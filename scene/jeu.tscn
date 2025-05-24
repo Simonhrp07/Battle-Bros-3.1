@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://dwwrtn6cc1sga"]
+[gd_scene load_steps=20 format=3 uid="uid://dwwrtn6cc1sga"]
 
 [ext_resource type="PackedScene" uid="uid://cj07ichvcj4q6" path="res://scene/player.tscn" id="1_322si"]
 [ext_resource type="PackedScene" uid="uid://ofxivlcp3fut" path="res://addons/assets/StylooVillageFREEPack/gltf/house7.glb" id="2_nc8l6"]
 [ext_resource type="PackedScene" uid="uid://c3fssr3530i4c" path="res://addons/assets/StylooVillageFREEPack/gltf/cart.glb" id="3_80opa"]
 [ext_resource type="PackedScene" uid="uid://b1jw188rarro4" path="res://addons/assets/StylooVillageFREEPack/gltf/bench_001.glb" id="4_74b5l"]
-[ext_resource type="PackedScene" uid="uid://dii1kpg3bm5nq" path="res://addons/assets/Ultimate Nature Pack by Quaternius/FBX/CommonTree_2.fbx" id="5_gl3p0"]
+[ext_resource type="PackedScene" uid="uid://dii1kpg3bm5nq" path="res://addons/assets/avec_collision/asset_origin/CommonTree_2.fbx" id="5_gl3p0"]
 [ext_resource type="PackedScene" uid="uid://37y3idecyid5" path="res://addons/assets/Ultimate Nature Pack by Quaternius/FBX/CommonTree_1.fbx" id="6_pwdmj"]
 [ext_resource type="PackedScene" uid="uid://d2081qkc8ar18" path="res://addons/assets/Ultimate Nature Pack by Quaternius/FBX/CommonTree_5.fbx" id="7_4vrmp"]
 [ext_resource type="PackedScene" uid="uid://bvd1xwpff8s25" path="res://addons/assets/Ultimate Nature Pack by Quaternius/FBX/Plant_4.fbx" id="8_owqt4"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://2ywe2c6rwqrk" path="res://addons/assets/Ultimate Nature Pack by Quaternius/FBX/WoodLog.fbx" id="11_fcrjq"]
 [ext_resource type="PackedScene" uid="uid://bgtquuxtag332" path="res://addons/assets/Ultimate Nature Pack by Quaternius/FBX/Grass_2.fbx" id="12_ugh2x"]
 [ext_resource type="PackedScene" uid="uid://dps1ts5sg0xvu" path="res://addons/assets/Ultimate Nature Pack by Quaternius/FBX/Flowers.fbx" id="13_w1hm1"]
+[ext_resource type="PackedScene" uid="uid://dnffnvb5ntofx" path="res://addons/assets/avec_collision/arbre.tscn" id="14_fcrjq"]
+[ext_resource type="PackedScene" uid="uid://iac4tle0jiam" path="res://addons/assets/avec_collision/arbre2.tscn" id="15_ugh2x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bc8hh"]
 sky_top_color = Color(0.329859, 0.438094, 0.698075, 1)
@@ -43,11 +45,12 @@ light_energy = 1.5
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_322si")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20641, 0)
+transform = Transform3D(1, 3.35785e-09, 5.58794e-09, 3.42243e-09, 1, 2.32831e-10, -4.65661e-09, 0, 1, 12.6859, 1.66474, -0.137517)
 
 [node name="Terrain de base" type="CSGBox3D" parent="."]
 transform = Transform3D(999.998, 0.00150539, 1.33145, -1.50617, 0.999999, 0.579913, -1.33057, -0.000581917, 999.999, 0, 0, 0)
 material_overlay = SubResource("StandardMaterial3D_aw23n")
+use_collision = true
 size = Vector3(500, 1, 500)
 
 [node name="house72" parent="." instance=ExtResource("2_nc8l6")]
@@ -72,7 +75,7 @@ transform = Transform3D(2.49955, 0.038557, 0.027505, -0.0385218, 2.4997, -0.0034
 transform = Transform3D(0.882617, 0.0154229, 0.469838, -0.0130525, 0.999881, -0.0083019, -0.46991, 0.00119479, 0.882713, -0.200025, 0.337544, 2.7632)
 
 [node name="Plant_5" parent="." instance=ExtResource("8_owqt4")]
-transform = Transform3D(0.99982, 0.0154229, 0.011002, -0.0154087, 0.999881, -0.00136459, -0.0110217, 0.00119483, 0.999938, -0.713028, 0.35084, -1.74123)
+transform = Transform3D(0.998499, 0.0416818, 0.0355182, -0.0406181, 0.99872, -0.0301566, -0.0367297, 0.0286687, 0.998913, -0.713028, 0.35084, -1.74123)
 
 [node name="Rock_7" parent="." instance=ExtResource("9_7i66n")]
 transform = Transform3D(0.99982, 0.0154229, 0.011002, -0.0154087, 0.999881, -0.00136459, -0.0110217, 0.00119483, 0.999938, 4.87634, 0.698425, 9.08874)
@@ -166,3 +169,9 @@ transform = Transform3D(-0.999001, 0.0154227, -0.0419305, 0.0153591, 0.999881, 0
 
 [node name="Flowers10" parent="." instance=ExtResource("13_w1hm1")]
 transform = Transform3D(-0.999001, 0.0154227, -0.0419305, 0.0153591, 0.999881, 0.00184068, 0.0419546, 0.00119481, -0.999118, -1.39187, 0.0161358, 4.46316)
+
+[node name="Arbre" parent="." instance=ExtResource("14_fcrjq")]
+transform = Transform3D(0.99982, 0.0154229, 0.011002, -0.0154087, 0.999881, -0.00136459, -0.0110217, 0.00119483, 0.999938, 13.9447, 0.783344, 3.07407)
+
+[node name="Arbre2" parent="." instance=ExtResource("15_ugh2x")]
+transform = Transform3D(0.99982, 0.0154229, 0.011002, -0.0154087, 0.999881, -0.00136459, -0.0110217, 0.00119483, 0.999938, 15.6971, 0.543993, -2.11089)

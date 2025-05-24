@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnffnvb5ntofx"]
+
+[ext_resource type="PackedScene" uid="uid://1oapkpdh1ax7" path="res://addons/assets/avec_collision/asset_origin/BirchTree_1.fbx" id="1_t4hc7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mkhix"]
+
+[node name="Arbre" type="Node3D"]
+
+[node name="BirchTree_1" parent="." instance=ExtResource("1_t4hc7")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.841801, 0.0318541, 1.06241, -0.0473644, -2.09581, -0.00685926, 1.15903, -0.0625113, 0.771343, 0, 1.41643, 0)
+shape = SubResource("CapsuleShape3D_mkhix")
