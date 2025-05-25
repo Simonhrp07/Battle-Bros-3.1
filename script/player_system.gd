@@ -3,14 +3,19 @@ extends CharacterBody3D
 
 # How fast the player moves in meters per second.
 @export var speed = 14
+@export var hp :float = 50.0
+@export var xp:int =0
+@export var xpRequired :int = 1000
+@export var distanceDmg:int = 5
+@export var melleDmg:int = 12
 # The downward acceleration when in the air, in meters per second squared.
-@export var fall_acceleration = 75
 
+#movement system
 var target_velocity = Vector3.ZERO
-
 
 func _physics_process(_delta):
 	var direction = Vector3.ZERO
+
 
 	if Input.is_action_pressed("move_right"):
 		direction.x += 1
@@ -36,16 +41,13 @@ func _physics_process(_delta):
 	# Moving the Character
 	velocity = target_velocity
 	move_and_slide()
-
-
-
-## @export var hp =40
-#@export var xp = 0
-#var expMax = 250
-#@export var dmgDistance = 5
-#@export var dmgMelee =10
-#
-#func _process(_delta):
-		#if Input.is_action_pressed("hpplus"):
-			#hp+=1
-			#print(hp)
+	#movement system
+	
+func _process(_delta):
+	if Input.is_action_pressed("hptest"):
+		
+		hptest()
+	
+func hptest():
+	hp += 2
+	print(hp)
