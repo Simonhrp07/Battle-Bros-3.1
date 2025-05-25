@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ckgys8bje2tp"]
+[gd_scene load_steps=27 format=3 uid="uid://ckgys8bje2tp"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_gl4or"]
 [ext_resource type="Texture2D" uid="uid://bo4bj726ew010" path="res://scene/Node3D/Heightmap_0_0.res" id="2_brvut"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b732vvpc03y6o" path="res://scene/Node3D/Splatmap_0_0_0.res" id="11_0d4pv"]
 [ext_resource type="Texture2D" uid="uid://hrstwiww1xu3" path="res://scene/Node3D/Water_0_0.res" id="13_smf0o"]
 [ext_resource type="PackedScene" uid="uid://dwwrtn6cc1sga" path="res://scene/maison.tscn" id="14_gtqqq"]
+[ext_resource type="PackedScene" uid="uid://cj07ichvcj4q6" path="res://scene/player.tscn" id="17_smf0o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jcbur"]
 sky_top_color = Color(0.29921, 0.473811, 0.569845, 1)
@@ -118,3 +119,6 @@ metadata/_edit_lock_ = true
 
 [node name="maison" parent="." instance=ExtResource("14_gtqqq")]
 transform = Transform3D(0.999821, -0.0154088, -0.0110217, 0.0154228, 0.99988, 0.00119482, 0.011002, -0.0013646, 0.999939, 2.70137, -0.47382, 0.775552)
+
+[node name="Player" parent="." instance=ExtResource("17_smf0o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7989, 3.36149, -0.357768)

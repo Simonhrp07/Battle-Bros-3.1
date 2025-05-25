@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkochq40lxmea"]
+[gd_scene load_steps=5 format=3 uid="uid://bkochq40lxmea"]
 
 [ext_resource type="Texture2D" uid="uid://d18djv5jcgswg" path="res://assets/img/Default-Landscape.png" id="1_wj8sv"]
+[ext_resource type="Script" uid="uid://ybmlnwdup2du" path="res://script/menu_princ.gd" id="1_ybfyh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybfyh"]
 texture = ExtResource("1_wj8sv")
 modulate_color = Color(0.552956, 0.552956, 0.552956, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wj8sv"]
+bg_color = Color(0.65834, 0.65834, 0.65834, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 7
+shadow_offset = Vector2(5.02, 1.975)
 
 [node name="MenuPrinc" type="Control"]
 layout_mode = 3
@@ -13,6 +23,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ybfyh")
+metadata/_edit_vertical_guides_ = [1352.0, -52.0, 1303.0]
+metadata/_edit_horizontal_guides_ = [-24.0, 648.0]
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -31,19 +44,51 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_ybfyh")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.501
-offset_left = -515.0
-offset_top = -23.5
-offset_right = 520.0
-offset_bottom = 127.851
+anchor_bottom = 0.5
+offset_left = -471.0
+offset_top = -19.5
+offset_right = 474.0
+offset_bottom = 56.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 75
+alignment = 1
 
-[node name="Button" type="Button" parent="Panel/HBoxContainer"]
+[node name="btn_upgrade" type="Button" parent="Panel/HBoxContainer"]
+clip_contents = true
 layout_mode = 2
-text = "Play
+size_flags_horizontal = 7
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_wj8sv")
+text = "Upgrade"
+
+[node name="btn_play" type="Button" parent="Panel/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_wj8sv")
+text = "Play"
+
+[node name="btn_shop" type="Button" parent="Panel/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_wj8sv")
+text = "Shop
 "
+
+[connection signal="pressed" from="Panel/HBoxContainer/btn_upgrade" to="." method="_on_btn_upgrade_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/btn_play" to="." method="_on_btn_play_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/btn_shop" to="." method="_on_btn_shop_pressed"]
