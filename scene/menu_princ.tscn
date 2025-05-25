@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkochq40lxmea"]
+
+[ext_resource type="Texture2D" uid="uid://d18djv5jcgswg" path="res://assets/img/Default-Landscape.png" id="1_wj8sv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybfyh"]
+texture = ExtResource("1_wj8sv")
+modulate_color = Color(0.552956, 0.552956, 0.552956, 1)
+
+[node name="MenuPrinc" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -569.0
+offset_top = -322.0
+offset_right = 573.0
+offset_bottom = 327.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ybfyh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.501
+offset_left = -515.0
+offset_top = -23.5
+offset_right = 520.0
+offset_bottom = 127.851
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+text = "Play
+"
