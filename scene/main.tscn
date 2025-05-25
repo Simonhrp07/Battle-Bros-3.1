@@ -1,17 +1,52 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckgys8bje2tp"]
+[gd_scene load_steps=20 format=3 uid="uid://ckgys8bje2tp"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_gl4or"]
 [ext_resource type="Texture2D" uid="uid://bo4bj726ew010" path="res://scene/Node3D/Heightmap_0_0.res" id="2_brvut"]
+[ext_resource type="Texture2D" uid="uid://cjpbg82hj27hm" path="res://addons/TerraBrush1/addons/terrabrush/Assets/texture/Grass005_1K-JPG_Color.jpg" id="2_hybxs"]
 [ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="3_0ha60"]
+[ext_resource type="Texture2D" uid="uid://d0vp135n06yc2" path="res://addons/TerraBrush1/addons/terrabrush/Assets/texture/Grass005_1K-JPG_NormalGL.jpg" id="3_v2gmf"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="4_4j5ol"]
+[ext_resource type="Texture2D" uid="uid://duh7cgxlbdxex" path="res://addons/TerraBrush1/addons/terrabrush/Assets/texture/Grass005_1K-JPG_Roughness.jpg" id="4_jcbur"]
+[ext_resource type="Script" uid="uid://c2l8t4xcdxwvu" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetResource.cs" id="5_smf0o"]
+[ext_resource type="Texture2D" uid="uid://cgfenf7pp4hkd" path="res://addons/TerraBrush1/addons/terrabrush/Assets/Icons/Ground054_1K-JPG_Color.jpg" id="6_tv8i1"]
+[ext_resource type="Texture2D" uid="uid://c86cyp4v55db3" path="res://addons/TerraBrush1/addons/terrabrush/Assets/Icons/Ground054_1K-JPG_NormalGL.jpg" id="7_0vlqb"]
+[ext_resource type="Texture2D" uid="uid://qsgs48ldit2s" path="res://addons/TerraBrush1/addons/terrabrush/Assets/Icons/Ground054_1K-JPG_Roughness.jpg" id="8_gjnwh"]
+[ext_resource type="Script" uid="uid://043vjblb04jf" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="9_fdqew"]
+[ext_resource type="Texture2D" uid="uid://b732vvpc03y6o" path="res://scene/Node3D/Splatmap_0_0_0.res" id="11_0d4pv"]
+[ext_resource type="PackedScene" uid="uid://dwwrtn6cc1sga" path="res://scene/maison.tscn" id="14_gtqqq"]
+
+[sub_resource type="Resource" id="Resource_gn2wi"]
+script = ExtResource("5_smf0o")
+Name = "Grass"
+AlbedoTexture = ExtResource("2_hybxs")
+NormalTexture = ExtResource("3_v2gmf")
+RoughnessTexture = ExtResource("4_jcbur")
+TextureDetail = -1
+Triplanar = false
+metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
+
+[sub_resource type="Resource" id="Resource_p8adh"]
+script = ExtResource("5_smf0o")
+Name = "Sand"
+AlbedoTexture = ExtResource("6_tv8i1")
+NormalTexture = ExtResource("7_0vlqb")
+RoughnessTexture = ExtResource("8_gjnwh")
+TextureDetail = -1
+Triplanar = false
+metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
+
+[sub_resource type="Resource" id="Resource_oldxj"]
+script = ExtResource("9_fdqew")
+TextureSets = [SubResource("Resource_gn2wi"), SubResource("Resource_p8adh")]
+metadata/_custom_type_script = "uid://043vjblb04jf"
 
 [sub_resource type="Resource" id="Resource_p1hux"]
 script = ExtResource("3_0ha60")
 ZonePosition = Vector2i(0, 0)
 HeightMapTexture = ExtResource("2_brvut")
-SplatmapsTexture = []
-FoliagesTexture = null
-ObjectsTexture = null
+SplatmapsTexture = [ExtResource("11_0d4pv")]
+FoliagesTexture = []
+ObjectsTexture = []
 
 [sub_resource type="Resource" id="Resource_of57s"]
 script = ExtResource("4_4j5ol")
@@ -23,6 +58,10 @@ Zones = [SubResource("Resource_p1hux")]
 script = ExtResource("1_gl4or")
 ZonesSize = 376
 DataPath = "res://scene/Node3D"
+TextureSets = SubResource("Resource_oldxj")
 TerrainZones = SubResource("Resource_of57s")
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
 metadata/_edit_lock_ = true
+
+[node name="maison" parent="." instance=ExtResource("14_gtqqq")]
+transform = Transform3D(0.999821, -0.0154088, -0.0110217, 0.0154228, 0.99988, 0.00119482, 0.011002, -0.0013646, 0.999939, 2.70137, -0.47382, 0.775552)
