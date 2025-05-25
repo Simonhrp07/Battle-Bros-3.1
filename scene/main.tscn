@@ -115,10 +115,10 @@ Objects = []
 WaterDefinition = SubResource("Resource_tv8i1")
 TerrainZones = SubResource("Resource_of57s")
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
-metadata/_edit_lock_ = true
+metadata/_edit_lock_ = false
 
 [node name="maison" parent="." instance=ExtResource("14_gtqqq")]
 transform = Transform3D(0.999821, -0.0154088, -0.0110217, 0.0154228, 0.99988, 0.00119482, 0.011002, -0.0013646, 0.999939, 2.70137, -0.47382, 0.775552)
 
 [node name="Player" parent="." instance=ExtResource("17_smf0o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7989, 3.36149, -0.357768)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.983, 1, 15.4503)
