@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cep1tnabsniej"]
+[gd_scene load_steps=5 format=3 uid="uid://cep1tnabsniej"]
 
 [ext_resource type="Texture2D" uid="uid://d18djv5jcgswg" path="res://assets/img/Default-Landscape.png" id="1_wj8sv"]
 [ext_resource type="Script" uid="uid://ybmlnwdup2du" path="res://script/menu_princ.gd" id="1_ybfyh"]
