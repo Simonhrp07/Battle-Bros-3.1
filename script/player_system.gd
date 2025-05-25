@@ -4,6 +4,7 @@ extends CharacterBody3D
 # How fast the player moves in meters per second.
 @export var speed = 14
 @export var hp :float = 50.0
+@export var hpmax :float = 50.0
 @export var xp:int =0
 @export var xpRequired :int = 1000
 @export var distanceDmg:int = 5
