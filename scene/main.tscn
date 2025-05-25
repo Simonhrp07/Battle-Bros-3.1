@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ckgys8bje2tp"]
+[gd_scene load_steps=26 format=3 uid="uid://ckgys8bje2tp"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_gl4or"]
 [ext_resource type="Texture2D" uid="uid://bo4bj726ew010" path="res://scene/Node3D/Heightmap_0_0.res" id="2_brvut"]
@@ -16,6 +16,21 @@
 [ext_resource type="Texture2D" uid="uid://b732vvpc03y6o" path="res://scene/Node3D/Splatmap_0_0_0.res" id="11_0d4pv"]
 [ext_resource type="Texture2D" uid="uid://hrstwiww1xu3" path="res://scene/Node3D/Water_0_0.res" id="13_smf0o"]
 [ext_resource type="PackedScene" uid="uid://dwwrtn6cc1sga" path="res://scene/maison.tscn" id="14_gtqqq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jcbur"]
+sky_top_color = Color(0.29921, 0.473811, 0.569845, 1)
+sky_horizon_color = Color(0.62838, 0.676377, 0.710856, 1)
+ground_bottom_color = Color(0.156935, 0.174322, 0.216206, 1)
+ground_horizon_color = Color(0.62838, 0.676377, 0.710856, 1)
+
+[sub_resource type="Sky" id="Sky_smf0o"]
+sky_material = SubResource("ProceduralSkyMaterial_jcbur")
+
+[sub_resource type="Environment" id="Environment_tv8i1"]
+background_mode = 2
+sky = SubResource("Sky_smf0o")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="Resource" id="Resource_gn2wi"]
 script = ExtResource("5_smf0o")
@@ -79,6 +94,15 @@ script = ExtResource("4_4j5ol")
 Zones = [SubResource("Resource_p1hux")]
 
 [node name="main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tv8i1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.445507, 0.226996, 0, 0.453988, 0.891008, -0.500003, 0.771634, -0.393164, 0, 0, 0)
+light_color = Color(1, 1, 0.054902, 1)
+light_angular_distance = 6.0
+shadow_enabled = true
 
 [node name="TerraBrush" type="Node3D" parent="."]
 script = ExtResource("1_gl4or")
