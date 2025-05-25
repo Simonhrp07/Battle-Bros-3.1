@@ -10,6 +10,7 @@ extends CharacterBody3D
 @export var melleDmg:int = 12
 # The downward acceleration when in the air, in meters per second squared.
 
+var timer :Timer =Timer.new()
 #movement system
 var target_velocity = Vector3.ZERO
 
@@ -45,7 +46,7 @@ func _physics_process(_delta):
 	
 func _process(_delta):
 	if Input.is_action_pressed("hptest"):
-		
+		timer.wait_time =1.0
 		hptest()
 	
 func hptest():

@@ -15,11 +15,6 @@ run/main_scene="uid://dwwrtn6cc1sga"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[debug]
-
-settings/stdout/print_fps=true
-settings/stdout/print_gpu_profile=true
-
 [dotnet]
 
 project/assembly_name="Battle Bros 3.0"
@@ -71,5 +66,9 @@ limits/message_queue/max_size_mb=64
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method="mobile"
+
+[terraBrush]
+
+brushes/decal_color=Color(0.815596, 0.286811, 0.716915, 1)
+brushes/sculpting_multiplier=6

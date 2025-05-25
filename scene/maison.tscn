@@ -1,6 +1,5 @@
-[gd_scene load_steps=29 format=3 uid="uid://dwwrtn6cc1sga"]
+[gd_scene load_steps=12 format=3 uid="uid://dwwrtn6cc1sga"]
 
-[ext_resource type="PackedScene" uid="uid://cj07ichvcj4q6" path="res://scene/player.tscn" id="1_322si"]
 [ext_resource type="PackedScene" uid="uid://ofxivlcp3fut" path="res://addons/assets/StylooVillageFREEPack/gltf/house7.glb" id="2_nc8l6"]
 [ext_resource type="PackedScene" uid="uid://c3fssr3530i4c" path="res://addons/assets/StylooVillageFREEPack/gltf/cart.glb" id="3_80opa"]
 [ext_resource type="PackedScene" uid="uid://b1jw188rarro4" path="res://addons/assets/StylooVillageFREEPack/gltf/bench_001.glb" id="4_74b5l"]
@@ -9,32 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b0a15kykoed5m" path="res://addons/assets/Ultimate Nature Pack by Quaternius/FBX/Rock_1.fbx" id="10_w1hm1"]
 [ext_resource type="PackedScene" uid="uid://2ywe2c6rwqrk" path="res://addons/assets/Ultimate Nature Pack by Quaternius/FBX/WoodLog.fbx" id="11_fcrjq"]
 [ext_resource type="PackedScene" uid="uid://bgtquuxtag332" path="res://addons/assets/Ultimate Nature Pack by Quaternius/FBX/Grass_2.fbx" id="12_ugh2x"]
-[ext_resource type="PackedScene" uid="uid://ci6ijdeyp3std" path="res://addons/assets/assets_perso/cb_arbre/arbre4.tscn" id="13_fcrjq"]
 [ext_resource type="PackedScene" uid="uid://dps1ts5sg0xvu" path="res://addons/assets/Ultimate Nature Pack by Quaternius/FBX/Flowers.fbx" id="13_w1hm1"]
-[ext_resource type="PackedScene" uid="uid://dnffnvb5ntofx" path="res://addons/assets/assets_perso/cb_arbre/arbre.tscn" id="14_fcrjq"]
-[ext_resource type="PackedScene" uid="uid://my8phuxsykfv" path="res://addons/assets/assets_perso/cb_arbre/arbre3.tscn" id="14_ugh2x"]
-[ext_resource type="PackedScene" uid="uid://ba6bjq37aluhw" path="res://addons/assets/assets_perso/cb_rock/rock1.tscn" id="15_0p3o7"]
-[ext_resource type="PackedScene" uid="uid://iac4tle0jiam" path="res://addons/assets/assets_perso/cb_arbre/arbre2.tscn" id="15_ugh2x"]
-[ext_resource type="PackedScene" uid="uid://c6fwn0ffb6ou8" path="res://addons/assets/assets_perso/cb_rock/rock2.tscn" id="16_br70l"]
-[ext_resource type="PackedScene" uid="uid://6od71toy8ldh" path="res://addons/assets/assets_perso/cb_rock/rock.tscn" id="17_cqrjd"]
-[ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="18_xpste"]
-[ext_resource type="Texture2D" uid="uid://b32o3yr0obuix" path="res://scene/Jeu/Heightmap_0_0.res" id="19_4df48"]
-[ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="20_atev8"]
-[ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="21_s5fop"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bc8hh"]
-sky_top_color = Color(0.329859, 0.438094, 0.698075, 1)
-sky_horizon_color = Color(0.627901, 0.659306, 0.734773, 1)
-ground_bottom_color = Color(0.156935, 0.174322, 0.216206, 1)
-ground_horizon_color = Color(0.627901, 0.659306, 0.734773, 1)
-
-[sub_resource type="Sky" id="Sky_r6dh1"]
-sky_material = SubResource("ProceduralSkyMaterial_bc8hh")
-
-[sub_resource type="Environment" id="Environment_h8l20"]
-background_mode = 2
-sky = SubResource("Sky_r6dh1")
-tonemap_mode = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7i66n"]
 size = Vector3(6.40388, 4.57825, 5.00495)
@@ -42,31 +16,8 @@ size = Vector3(6.40388, 4.57825, 5.00495)
 [sub_resource type="BoxShape3D" id="BoxShape3D_w1hm1"]
 size = Vector3(3.18127, 1.53711, 3.48535)
 
-[sub_resource type="Resource" id="Resource_7ef8f"]
-script = ExtResource("20_atev8")
-ZonePosition = Vector2i(0, 0)
-HeightMapTexture = ExtResource("19_4df48")
-SplatmapsTexture = []
-FoliagesTexture = null
-ObjectsTexture = null
-
-[sub_resource type="Resource" id="Resource_ldap7"]
-script = ExtResource("21_s5fop")
-Zones = [SubResource("Resource_7ef8f")]
-
-[node name="Jeu" type="Node3D"]
-transform = Transform3D(0.999821, -0.0154088, -0.0110217, 0.0154228, 0.99988, 0.00119482, 0.011002, -0.0013646, 0.999939, 0, 0, 0)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_h8l20")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.0975829, -0.886754, 0.451824, 0, 0.453991, 0.891006, -0.995227, 0.086947, -0.0443018, 0, 23.2255, 0)
-light_energy = 1.5
-shadow_enabled = true
-
-[node name="Player" parent="." instance=ExtResource("1_322si")]
-transform = Transform3D(1, 3.36968e-09, 6.51926e-09, 3.42243e-09, 1, 2.32831e-10, -6.51926e-09, 1.16415e-10, 1, 5.72584, 1.772, -0.0607914)
+[node name="maison" type="Node3D"]
+transform = Transform3D(0.999821, -0.0154088, -0.0110217, 0.0154228, 0.99988, 0.00119482, 0.011002, -0.0013646, 0.999939, 0, 5.05086, 0)
 
 [node name="house72" parent="." instance=ExtResource("2_nc8l6")]
 transform = Transform3D(-0.103136, 0.0032004, 1.99733, 0.00340727, 1.99999, -0.00302871, -1.99733, 0.00324655, -0.103141, -5.8002, 2.38509, 0.748131)
@@ -187,32 +138,3 @@ transform = Transform3D(0.113168, -0.311117, -0.943611, 0.146284, 0.944582, -0.2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cart2/StaticBody3D"]
 transform = Transform3D(1, 5.82077e-08, 2.98023e-08, 2.80852e-09, 1, 3.64933e-07, -4.47035e-07, 5.78482e-07, 1, -0.446596, 0.268554, 0.670414)
 shape = SubResource("BoxShape3D_w1hm1")
-
-[node name="Arbre" parent="." instance=ExtResource("14_fcrjq")]
-transform = Transform3D(0.99982, 0.0154229, 0.011002, -0.0154087, 0.999881, -0.00136459, -0.0110217, 0.00119483, 0.999938, 13.9348, 0.142563, 3.0733)
-
-[node name="Arbre2" parent="." instance=ExtResource("15_ugh2x")]
-transform = Transform3D(0.977793, 0.0150831, 0.0107596, -0.0150692, 0.977853, -0.00133453, -0.0107789, 0.00116851, 0.977909, 15.697, 0.536192, -2.1109)
-
-[node name="Arbre4" parent="." instance=ExtResource("13_fcrjq")]
-transform = Transform3D(0.99982, 0.0154229, 0.011002, -0.0154087, 0.999881, -0.00136459, -0.0110217, 0.00119483, 0.999938, 7.05236, 0.110882, -9.53823)
-
-[node name="Arbre3" parent="." instance=ExtResource("14_ugh2x")]
-transform = Transform3D(0.99982, 0.0154229, 0.011002, -0.0154087, 0.999881, -0.00136459, -0.0110217, 0.00119483, 0.999938, 11.6224, 0.299463, -6.807)
-
-[node name="Rock1" parent="." instance=ExtResource("15_0p3o7")]
-transform = Transform3D(0.99982, 0.0154229, 0.011002, -0.0154087, 0.999881, -0.00136459, -0.0110217, 0.00119483, 0.999938, 1.65072, 0.558117, -14.0885)
-
-[node name="Rock2" parent="." instance=ExtResource("16_br70l")]
-transform = Transform3D(0.99982, 0.0154229, 0.011002, -0.0154087, 0.999881, -0.00136459, -0.0110217, 0.00119483, 0.999938, -0.265025, 0.586988, -15.0415)
-
-[node name="Rock" parent="." instance=ExtResource("17_cqrjd")]
-transform = Transform3D(0.99982, 0.0154229, 0.011002, -0.0154087, 0.999881, -0.00136459, -0.0110217, 0.00119483, 0.999938, -1.83993, 0.801951, -15.8238)
-
-[node name="TerraBrush" type="Node3D" parent="."]
-script = ExtResource("18_xpste")
-CollisionOnly = true
-DataPath = "res://scene/Jeu"
-TerrainZones = SubResource("Resource_ldap7")
-metadata/_custom_type_script = "uid://i5jcj7ukvoen"
-metadata/_edit_lock_ = false

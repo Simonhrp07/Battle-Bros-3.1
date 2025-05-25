@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckgys8bje2tp"]
+
+[ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_gl4or"]
+[ext_resource type="Texture2D" uid="uid://bo4bj726ew010" path="res://scene/Node3D/Heightmap_0_0.res" id="2_brvut"]
+[ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="3_0ha60"]
+[ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="4_4j5ol"]
+
+[sub_resource type="Resource" id="Resource_p1hux"]
+script = ExtResource("3_0ha60")
+ZonePosition = Vector2i(0, 0)
+HeightMapTexture = ExtResource("2_brvut")
+SplatmapsTexture = []
+FoliagesTexture = null
+ObjectsTexture = null
+
+[sub_resource type="Resource" id="Resource_of57s"]
+script = ExtResource("4_4j5ol")
+Zones = [SubResource("Resource_p1hux")]
+
+[node name="main" type="Node3D"]
+
+[node name="TerraBrush" type="Node3D" parent="."]
+script = ExtResource("1_gl4or")
+ZonesSize = 376
+DataPath = "res://scene/Node3D"
+TerrainZones = SubResource("Resource_of57s")
+metadata/_custom_type_script = "uid://i5jcj7ukvoen"
+metadata/_edit_lock_ = true
