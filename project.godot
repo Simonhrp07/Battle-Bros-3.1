@@ -12,8 +12,13 @@ config_version=5
 
 config/name="Battle Bros 3.0"
 run/main_scene="uid://dwwrtn6cc1sga"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[debug]
+
+settings/stdout/print_fps=true
+settings/stdout/print_gpu_profile=true
 
 [dotnet]
 
@@ -23,6 +28,10 @@ project/assembly_name="Battle Bros 3.0"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/terrabrush/plugin.cfg")
 
 [filesystem]
 
@@ -55,6 +64,10 @@ hptest={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
 ]
 }
+
+[memory]
+
+limits/message_queue/max_size_mb=64
 
 [rendering]
 

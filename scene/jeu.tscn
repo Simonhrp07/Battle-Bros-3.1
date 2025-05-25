@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dwwrtn6cc1sga"]
+[gd_scene load_steps=29 format=3 uid="uid://dwwrtn6cc1sga"]
 
 [ext_resource type="PackedScene" uid="uid://cj07ichvcj4q6" path="res://scene/player.tscn" id="1_322si"]
 [ext_resource type="PackedScene" uid="uid://ofxivlcp3fut" path="res://addons/assets/StylooVillageFREEPack/gltf/house7.glb" id="2_nc8l6"]
@@ -17,6 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://iac4tle0jiam" path="res://addons/assets/assets_perso/cb_arbre/arbre2.tscn" id="15_ugh2x"]
 [ext_resource type="PackedScene" uid="uid://c6fwn0ffb6ou8" path="res://addons/assets/assets_perso/cb_rock/rock2.tscn" id="16_br70l"]
 [ext_resource type="PackedScene" uid="uid://6od71toy8ldh" path="res://addons/assets/assets_perso/cb_rock/rock.tscn" id="17_cqrjd"]
+[ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="18_xpste"]
+[ext_resource type="Texture2D" uid="uid://b32o3yr0obuix" path="res://scene/Jeu/Heightmap_0_0.res" id="19_4df48"]
+[ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="20_atev8"]
+[ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="21_s5fop"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bc8hh"]
 sky_top_color = Color(0.329859, 0.438094, 0.698075, 1)
@@ -32,14 +36,23 @@ background_mode = 2
 sky = SubResource("Sky_r6dh1")
 tonemap_mode = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aw23n"]
-albedo_color = Color(0.181856, 0.266558, 4.81308e-08, 1)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_7i66n"]
 size = Vector3(6.40388, 4.57825, 5.00495)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w1hm1"]
 size = Vector3(3.18127, 1.53711, 3.48535)
+
+[sub_resource type="Resource" id="Resource_7ef8f"]
+script = ExtResource("20_atev8")
+ZonePosition = Vector2i(0, 0)
+HeightMapTexture = ExtResource("19_4df48")
+SplatmapsTexture = []
+FoliagesTexture = null
+ObjectsTexture = null
+
+[sub_resource type="Resource" id="Resource_ldap7"]
+script = ExtResource("21_s5fop")
+Zones = [SubResource("Resource_7ef8f")]
 
 [node name="Jeu" type="Node3D"]
 transform = Transform3D(0.999821, -0.0154088, -0.0110217, 0.0154228, 0.99988, 0.00119482, 0.011002, -0.0013646, 0.999939, 0, 0, 0)
@@ -54,12 +67,6 @@ shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_322si")]
 transform = Transform3D(1, 3.36968e-09, 6.51926e-09, 3.42243e-09, 1, 2.32831e-10, -6.51926e-09, 1.16415e-10, 1, 5.72584, 1.772, -0.0607914)
-
-[node name="Terrain de base" type="CSGBox3D" parent="."]
-transform = Transform3D(999.998, 0.00150539, 1.33145, -1.50617, 0.999999, 0.579913, -1.33057, -0.000581917, 999.999, 0, 0, 0)
-material_overlay = SubResource("StandardMaterial3D_aw23n")
-use_collision = true
-size = Vector3(500, 1, 500)
 
 [node name="house72" parent="." instance=ExtResource("2_nc8l6")]
 transform = Transform3D(-0.103136, 0.0032004, 1.99733, 0.00340727, 1.99999, -0.00302871, -1.99733, 0.00324655, -0.103141, -5.8002, 2.38509, 0.748131)
@@ -201,3 +208,11 @@ transform = Transform3D(0.99982, 0.0154229, 0.011002, -0.0154087, 0.999881, -0.0
 
 [node name="Rock" parent="." instance=ExtResource("17_cqrjd")]
 transform = Transform3D(0.99982, 0.0154229, 0.011002, -0.0154087, 0.999881, -0.00136459, -0.0110217, 0.00119483, 0.999938, -1.83993, 0.801951, -15.8238)
+
+[node name="TerraBrush" type="Node3D" parent="."]
+script = ExtResource("18_xpste")
+CollisionOnly = true
+DataPath = "res://scene/Jeu"
+TerrainZones = SubResource("Resource_ldap7")
+metadata/_custom_type_script = "uid://i5jcj7ukvoen"
+metadata/_edit_lock_ = false
