@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ckgys8bje2tp"]
+[gd_scene load_steps=23 format=3 uid="uid://ckgys8bje2tp"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_gl4or"]
 [ext_resource type="Texture2D" uid="uid://bo4bj726ew010" path="res://scene/Node3D/Heightmap_0_0.res" id="2_brvut"]
@@ -12,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://c86cyp4v55db3" path="res://addons/TerraBrush1/addons/terrabrush/Assets/Icons/Ground054_1K-JPG_NormalGL.jpg" id="7_0vlqb"]
 [ext_resource type="Texture2D" uid="uid://qsgs48ldit2s" path="res://addons/TerraBrush1/addons/terrabrush/Assets/Icons/Ground054_1K-JPG_Roughness.jpg" id="8_gjnwh"]
 [ext_resource type="Script" uid="uid://043vjblb04jf" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="9_fdqew"]
+[ext_resource type="Script" uid="uid://k2tvfxm6feg5" path="res://addons/terrabrush/Scripts/EditorResources/WaterResource.cs" id="10_jcbur"]
 [ext_resource type="Texture2D" uid="uid://b732vvpc03y6o" path="res://scene/Node3D/Splatmap_0_0_0.res" id="11_0d4pv"]
+[ext_resource type="Texture2D" uid="uid://hrstwiww1xu3" path="res://scene/Node3D/Water_0_0.res" id="13_smf0o"]
 [ext_resource type="PackedScene" uid="uid://dwwrtn6cc1sga" path="res://scene/maison.tscn" id="14_gtqqq"]
 
 [sub_resource type="Resource" id="Resource_gn2wi"]
@@ -40,6 +42,29 @@ script = ExtResource("9_fdqew")
 TextureSets = [SubResource("Resource_gn2wi"), SubResource("Resource_p8adh")]
 metadata/_custom_type_script = "uid://043vjblb04jf"
 
+[sub_resource type="Resource" id="Resource_tv8i1"]
+script = ExtResource("10_jcbur")
+WaterFactor = 1.0
+WaterInnerOffset = 0.2
+WaterColor = Color(0.0666667, 0.0784314, 1, 1)
+WaterFresnelColor = Color(1, 1, 1, 1)
+WaterMetallic = 0.0
+WaterRoughness = 0.0
+WaterTimeScale = 0.1
+WaterStrength = 0.4
+WaterNoiseScale = 10.0
+WaterHeightScale = 0.15
+WaterColorDeep = Color(1, 1, 1, 1)
+WaterColorShallow = Color(1, 1, 1, 1)
+WaterBeersLaw = 2.0
+WaterDepthOffset = -0.75
+WaterEdgeScale = 0.1
+WaterNear = 0.5
+WaterFar = 100.0
+WaterEdgeColor = Color(1, 1, 1, 1)
+VisualInstanceLayers = 1
+metadata/_custom_type_script = "uid://k2tvfxm6feg5"
+
 [sub_resource type="Resource" id="Resource_p1hux"]
 script = ExtResource("3_0ha60")
 ZonePosition = Vector2i(0, 0)
@@ -47,6 +72,7 @@ HeightMapTexture = ExtResource("2_brvut")
 SplatmapsTexture = [ExtResource("11_0d4pv")]
 FoliagesTexture = []
 ObjectsTexture = []
+WaterTexture = ExtResource("13_smf0o")
 
 [sub_resource type="Resource" id="Resource_of57s"]
 script = ExtResource("4_4j5ol")
@@ -59,6 +85,9 @@ script = ExtResource("1_gl4or")
 ZonesSize = 376
 DataPath = "res://scene/Node3D"
 TextureSets = SubResource("Resource_oldxj")
+Foliages = []
+Objects = []
+WaterDefinition = SubResource("Resource_tv8i1")
 TerrainZones = SubResource("Resource_of57s")
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
 metadata/_edit_lock_ = true
