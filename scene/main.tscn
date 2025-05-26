@@ -1,11 +1,25 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckgys8bje2tp"]
+[gd_scene load_steps=31 format=3 uid="uid://ckgys8bje2tp"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_gl4or"]
 [ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="3_0ha60"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="4_4j5ol"]
+[ext_resource type="Texture2D" uid="uid://c5jwiqbhh68n0" path="res://addons/TerraBrush1/addons/terrabrush/Assets/texture/Grass001_1K-JPG_Color.jpg" id="4_gjnwh"]
 [ext_resource type="Texture2D" uid="uid://sm0oq0iplo8k" path="res://scene/main/Heightmap_0_0.res" id="4_p1hux"]
+[ext_resource type="Texture2D" uid="uid://ur354y11g2pj" path="res://addons/TerraBrush1/addons/terrabrush/Assets/texture/Grass001_1K-JPG_NormalDX.jpg" id="5_fdqew"]
+[ext_resource type="Script" uid="uid://c2l8t4xcdxwvu" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetResource.cs" id="5_smf0o"]
+[ext_resource type="Texture2D" uid="uid://ddb28ynammcbv" path="res://addons/TerraBrush1/addons/terrabrush/Assets/texture/Grass001_1K-JPG_Roughness.jpg" id="6_0d4pv"]
+[ext_resource type="Texture2D" uid="uid://cgfenf7pp4hkd" path="res://addons/TerraBrush1/addons/terrabrush/Assets/Icons/Ground054_1K-JPG_Color.jpg" id="6_tv8i1"]
+[ext_resource type="Texture2D" uid="uid://qsgs48ldit2s" path="res://addons/TerraBrush1/addons/terrabrush/Assets/Icons/Ground054_1K-JPG_Roughness.jpg" id="8_gjnwh"]
+[ext_resource type="Script" uid="uid://043vjblb04jf" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="9_fdqew"]
+[ext_resource type="Texture2D" uid="uid://dwetldogkpobo" path="res://addons/TerraBrush1/addons/terrabrush/Assets/Icons/Ground054_1K-JPG_NormalDX.jpg" id="9_gtqqq"]
+[ext_resource type="Script" uid="uid://k2tvfxm6feg5" path="res://addons/terrabrush/Scripts/EditorResources/WaterResource.cs" id="10_jcbur"]
+[ext_resource type="Texture2D" uid="uid://d4inpa44rng83" path="res://scene/main/Splatmap_0_0_0.res" id="14_gn2wi"]
 [ext_resource type="PackedScene" uid="uid://dwwrtn6cc1sga" path="res://scene/maison.tscn" id="14_gtqqq"]
+[ext_resource type="Texture2D" uid="uid://ch6qbclbcgsw4" path="res://scene/main/Water_0_0.res" id="15_p8adh"]
+[ext_resource type="Texture2D" uid="uid://dossdc685wse" path="res://scene/main/Heightmap_0_1.res" id="17_oldxj"]
 [ext_resource type="PackedScene" uid="uid://cj07ichvcj4q6" path="res://scene/player.tscn" id="17_smf0o"]
+[ext_resource type="Texture2D" uid="uid://dmiiulipd4l4r" path="res://scene/main/Splatmap_0_1_0.res" id="18_4jm02"]
+[ext_resource type="Texture2D" uid="uid://csk4vrplmodcq" path="res://scene/main/Water_0_1.res" id="19_vneqc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jcbur"]
 sky_top_color = Color(0.29921, 0.473811, 0.569845, 1)
@@ -22,17 +36,75 @@ sky = SubResource("Sky_smf0o")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="Resource" id="Resource_io27d"]
+script = ExtResource("5_smf0o")
+Name = "Sand"
+AlbedoTexture = ExtResource("4_gjnwh")
+NormalTexture = ExtResource("5_fdqew")
+RoughnessTexture = ExtResource("6_0d4pv")
+TextureDetail = -1
+Triplanar = false
+metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
+
+[sub_resource type="Resource" id="Resource_fa8t4"]
+script = ExtResource("5_smf0o")
+Name = ""
+AlbedoTexture = ExtResource("6_tv8i1")
+NormalTexture = ExtResource("9_gtqqq")
+RoughnessTexture = ExtResource("8_gjnwh")
+TextureDetail = -1
+Triplanar = false
+metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
+
+[sub_resource type="Resource" id="Resource_rg6nf"]
+script = ExtResource("9_fdqew")
+TextureSets = [SubResource("Resource_io27d"), SubResource("Resource_fa8t4")]
+metadata/_custom_type_script = "uid://043vjblb04jf"
+
+[sub_resource type="Resource" id="Resource_mjuaj"]
+script = ExtResource("10_jcbur")
+WaterFactor = 1.0
+WaterInnerOffset = 0.2
+WaterColor = Color(0.129412, 0.290196, 1, 1)
+WaterFresnelColor = Color(1, 1, 1, 1)
+WaterMetallic = 0.0
+WaterRoughness = 0.0
+WaterTimeScale = 0.1
+WaterStrength = 0.4
+WaterNoiseScale = 10.0
+WaterHeightScale = 0.15
+WaterColorDeep = Color(1, 1, 1, 1)
+WaterColorShallow = Color(1, 1, 1, 1)
+WaterBeersLaw = 2.0
+WaterDepthOffset = -0.75
+WaterEdgeScale = 0.1
+WaterNear = 0.5
+WaterFar = 100.0
+WaterEdgeColor = Color(1, 1, 1, 1)
+VisualInstanceLayers = 1
+metadata/_custom_type_script = "uid://k2tvfxm6feg5"
+
 [sub_resource type="Resource" id="Resource_of57s"]
 script = ExtResource("3_0ha60")
 ZonePosition = Vector2i(0, 0)
 HeightMapTexture = ExtResource("4_p1hux")
-SplatmapsTexture = []
+SplatmapsTexture = [ExtResource("14_gn2wi")]
+FoliagesTexture = []
+ObjectsTexture = []
+WaterTexture = ExtResource("15_p8adh")
+
+[sub_resource type="Resource" id="Resource_gj7ui"]
+script = ExtResource("3_0ha60")
+ZonePosition = Vector2i(0, 1)
+HeightMapTexture = ExtResource("17_oldxj")
+SplatmapsTexture = [ExtResource("18_4jm02")]
 FoliagesTexture = null
 ObjectsTexture = null
+WaterTexture = ExtResource("19_vneqc")
 
 [sub_resource type="Resource" id="Resource_b5f6u"]
 script = ExtResource("4_4j5ol")
-Zones = [SubResource("Resource_of57s")]
+Zones = [SubResource("Resource_of57s"), SubResource("Resource_gj7ui")]
 
 [node name="main" type="Node3D"]
 
@@ -57,6 +129,8 @@ ZonesSize = 257
 Resolution = 4
 DataPath = "res://scene/main"
 LODInitialCellWidth = 4.0
+TextureSets = SubResource("Resource_rg6nf")
+WaterDefinition = SubResource("Resource_mjuaj")
 TerrainZones = SubResource("Resource_b5f6u")
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
 metadata/_edit_lock_ = true
