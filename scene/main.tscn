@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://ckgys8bje2tp"]
+[gd_scene load_steps=81 format=3 uid="uid://ckgys8bje2tp"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_gl4or"]
 [ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="3_0ha60"]
@@ -159,6 +159,9 @@ points = PackedVector3Array(0.5, 0.416979, -0.0704909, 0.5, 0.441868, -0.347149,
 [sub_resource type="BoxShape3D" id="BoxShape3D_aq5ln"]
 size = Vector3(3.81434, 1.67761, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_vneqc"]
+size = Vector3(42.7145, 0.943504, 85.3874)
+
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_io27d"]
 points = PackedVector3Array(0.5, 0.416979, -0.0704909, 0.5, 0.441868, -0.347149, 0.5, 0.570109, -0.473369, 0.499903, 0.190073, 0.526641, 0.499903, 0.119982, 0.49991, 0.379993, 0.379979, -0.5, 0.5, 0.499961, -0.5, 0.379993, 0, 0.49991, -0.5, 0.535007, -0.486735, -0.5, 0.511959, -0.320519, -0.5, 0.321998, 0.179537, -0.5, 0.248167, 0.37369, -0.5, 0.155028, 0.513276, -0.38009, 0, 0.49991, -0.38009, 0.379979, -0.5, -0.5, 0.499961, -0.5, -0.5, 0.119982, 0.49991, -0.5, 0.273056, 0.0970317, -0.5, 0.441868, -0.347149)
 
@@ -279,7 +282,7 @@ shadow_enabled = true
 transform = Transform3D(0.999821, -0.0154088, -0.0110217, 0.0154228, 0.99988, 0.00119482, 0.011002, -0.0013646, 0.999939, 2.70137, -0.47382, 0.775552)
 
 [node name="Player" parent="." instance=ExtResource("17_smf0o")]
-transform = Transform3D(-0.0122665, 0.00952837, 0.999879, -0.0226178, 0.999696, -0.00980408, -0.999669, -0.0227353, -0.0120472, 9.68646, 1, 0.0305681)
+transform = Transform3D(-0.0122665, 0.00952837, 0.999879, -0.0226178, 0.999696, -0.00980408, -0.999669, -0.0227353, -0.0120472, 9.68646, 7.25819, 0.0305681)
 
 [node name="TerraBrush" type="Node3D" parent="."]
 script = ExtResource("1_gl4or")
@@ -308,6 +311,10 @@ shape = SubResource("ConvexPolygonShape3D_vneqc")
 transform = Transform3D(-2.49885, 0, -0.0757792, 0, 2.5, 0, 0.0757792, 0, -2.49885, -5.514, 2.2486, -1.48372)
 shape = SubResource("BoxShape3D_aq5ln")
 
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Platform-ramp/StaticBody3D"]
+transform = Transform3D(-2.49885, 0, -0.0757792, 0, 2.5, 0, 0.0757792, 0, -2.49885, -5.514, 2.2486, -1.48372)
+shape = SubResource("BoxShape3D_aq5ln")
+
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Platform-ramp/StaticBody3D"]
 transform = Transform3D(-2.49885, 0, -0.0757792, 0, 2.5, 0, 0.0757792, 0, -2.49885, 5.45525, 2.2486, -1.81637)
 shape = SubResource("BoxShape3D_aq5ln")
@@ -319,6 +326,10 @@ shape = SubResource("BoxShape3D_aq5ln")
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Platform-ramp/StaticBody3D"]
 transform = Transform3D(-2.49885, 0, -0.0757792, 0, 2.5, 0, 0.0757792, 0, -2.49885, 27.4265, 2.2486, -2.48266)
 shape = SubResource("BoxShape3D_aq5ln")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Platform-ramp/StaticBody3D"]
+transform = Transform3D(-0.999541, 0, -0.0303116, 0, 1, 0, 0.0303116, 0, -0.999541, 10.7768, -0.232098, -4.95261)
+shape = SubResource("BoxShape3D_vneqc")
 
 [node name="Platform-ramp2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-5.99724, 0, 0.18187, 0.0515412, 5.75402, 1.6996, -0.174414, 1.70038, -5.75137, 65.4308, 0.397573, 106.321)
