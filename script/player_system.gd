@@ -20,16 +20,16 @@ func _physics_process(_delta):
 
 
 	if Input.is_action_pressed("move_right"):
-		direction.x += 1
+		direction.z += 1
 		print("d")
 	if Input.is_action_pressed("move_left"):
-		direction.x -= 1
+		direction.z -= 1
 		print("q")
 	if Input.is_action_pressed("move_forward"):
-		direction.z -= 1
+		direction.x += 1
 		print("z")
 	if Input.is_action_pressed("move_backward"):
-		direction.z +=1
+		direction.x -=1
 		print("s")
 	
 	if direction != Vector3.ZERO:

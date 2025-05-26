@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://ckgys8bje2tp"]
+[gd_scene load_steps=43 format=3 uid="uid://ckgys8bje2tp"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_gl4or"]
 [ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="3_0ha60"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://do0wbydg5mytw" path="res://scene/main/Foliage_0_1_0.res" id="21_rg6nf"]
 [ext_resource type="ArrayMesh" uid="uid://c5dwr0tbcohxs" path="res://addons/assets/Platformer Kit/Models/OBJ format/platform-ramp.obj" id="22_gtqqq"]
 [ext_resource type="ArrayMesh" uid="uid://bmk2rty6nb24y" path="res://addons/assets/Platformer Kit/Models/OBJ format/fence-straight.obj" id="23_gn2wi"]
+[ext_resource type="PackedScene" uid="uid://2wna1bs15afr" path="res://scene/mob.tscn" id="28_vneqc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jcbur"]
 sky_top_color = Color(0.29921, 0.473811, 0.569845, 1)
@@ -167,7 +168,7 @@ shadow_enabled = true
 transform = Transform3D(0.999821, -0.0154088, -0.0110217, 0.0154228, 0.99988, 0.00119482, 0.011002, -0.0013646, 0.999939, 2.70137, -0.47382, 0.775552)
 
 [node name="Player" parent="." instance=ExtResource("17_smf0o")]
-transform = Transform3D(-0.0122665, 0.00952837, 0.999879, -0.0226178, 0.999696, -0.00980408, -0.999669, -0.0227353, -0.0120472, 13.983, 1, 0.0305681)
+transform = Transform3D(-0.0122665, 0.00952837, 0.999879, -0.0226178, 0.999696, -0.00980408, -0.999669, -0.0227353, -0.0120472, 9.68646, 1, 0.0305681)
 
 [node name="TerraBrush" type="Node3D" parent="."]
 script = ExtResource("1_gl4or")
@@ -326,3 +327,12 @@ mesh = ExtResource("23_gn2wi")
 [node name="Fence-straight24" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.00460741, -1.38391e-10, 6, -1.623, 5.77632, 0.0012463, -5.77632, -1.623, 0.00443565, -67.9995, 1.38731, 99.7148)
 mesh = ExtResource("23_gn2wi")
+
+[node name="Mob" parent="." instance=ExtResource("28_vneqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 18)
+
+[node name="Mob2" parent="." instance=ExtResource("28_vneqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.291, 0.171613, 32.9165)
+
+[node name="Mob3" parent="." instance=ExtResource("28_vneqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6622, 1, 18)
