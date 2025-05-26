@@ -1,28 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://ckgys8bje2tp"]
+[gd_scene load_steps=12 format=3 uid="uid://ckgys8bje2tp"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_gl4or"]
-[ext_resource type="Texture2D" uid="uid://bo4bj726ew010" path="res://scene/Node3D/Heightmap_0_0.res" id="2_brvut"]
-[ext_resource type="Texture2D" uid="uid://cjpbg82hj27hm" path="res://addons/TerraBrush1/addons/terrabrush/Assets/texture/Grass005_1K-JPG_Color.jpg" id="2_hybxs"]
 [ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="3_0ha60"]
-[ext_resource type="Texture2D" uid="uid://d0vp135n06yc2" path="res://addons/TerraBrush1/addons/terrabrush/Assets/texture/Grass005_1K-JPG_NormalGL.jpg" id="3_v2gmf"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="4_4j5ol"]
-[ext_resource type="Texture2D" uid="uid://duh7cgxlbdxex" path="res://addons/TerraBrush1/addons/terrabrush/Assets/texture/Grass005_1K-JPG_Roughness.jpg" id="4_jcbur"]
-[ext_resource type="Script" uid="uid://c2l8t4xcdxwvu" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetResource.cs" id="5_smf0o"]
-[ext_resource type="Texture2D" uid="uid://cgfenf7pp4hkd" path="res://addons/TerraBrush1/addons/terrabrush/Assets/Icons/Ground054_1K-JPG_Color.jpg" id="6_tv8i1"]
-[ext_resource type="Texture2D" uid="uid://c86cyp4v55db3" path="res://addons/TerraBrush1/addons/terrabrush/Assets/Icons/Ground054_1K-JPG_NormalGL.jpg" id="7_0vlqb"]
-[ext_resource type="Texture2D" uid="uid://qsgs48ldit2s" path="res://addons/TerraBrush1/addons/terrabrush/Assets/Icons/Ground054_1K-JPG_Roughness.jpg" id="8_gjnwh"]
-[ext_resource type="Script" uid="uid://043vjblb04jf" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="9_fdqew"]
-[ext_resource type="Texture2D" uid="uid://0r7mljj8r4g8" path="res://addons/TerraBrush1/addons/terrabrush/Assets/Follage/sprite_0004.png" id="10_fdqew"]
-[ext_resource type="Script" uid="uid://k2tvfxm6feg5" path="res://addons/terrabrush/Scripts/EditorResources/WaterResource.cs" id="10_jcbur"]
-[ext_resource type="Texture2D" uid="uid://b732vvpc03y6o" path="res://scene/Node3D/Splatmap_0_0_0.res" id="11_0d4pv"]
-[ext_resource type="Script" uid="uid://dgf8vwa2n8r11" path="res://addons/terrabrush/Scripts/EditorResources/FoliageDefinitionResource.cs" id="11_gtqqq"]
-[ext_resource type="Script" uid="uid://d33x21vao7tj2" path="res://addons/terrabrush/Scripts/EditorResources/FoliageResource.cs" id="12_gn2wi"]
-[ext_resource type="Texture2D" uid="uid://hrstwiww1xu3" path="res://scene/Node3D/Water_0_0.res" id="13_smf0o"]
+[ext_resource type="Texture2D" uid="uid://sm0oq0iplo8k" path="res://scene/main/Heightmap_0_0.res" id="4_p1hux"]
 [ext_resource type="PackedScene" uid="uid://dwwrtn6cc1sga" path="res://scene/maison.tscn" id="14_gtqqq"]
-[ext_resource type="Texture2D" uid="uid://cjs4wrrsufml7" path="res://scene/Node3D/Foliage_0_0_0.res" id="14_p8adh"]
 [ext_resource type="PackedScene" uid="uid://cj07ichvcj4q6" path="res://scene/player.tscn" id="17_smf0o"]
-[ext_resource type="ArrayMesh" uid="uid://c5dwr0tbcohxs" path="res://addons/assets/Platformer Kit/Models/OBJ format/platform-ramp.obj" id="22_gtqqq"]
-[ext_resource type="ArrayMesh" uid="uid://bmk2rty6nb24y" path="res://addons/assets/Platformer Kit/Models/OBJ format/fence-straight.obj" id="23_gn2wi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jcbur"]
 sky_top_color = Color(0.29921, 0.473811, 0.569845, 1)
@@ -39,105 +22,17 @@ sky = SubResource("Sky_smf0o")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="Resource" id="Resource_gn2wi"]
-script = ExtResource("5_smf0o")
-Name = "Grass"
-AlbedoTexture = ExtResource("2_hybxs")
-NormalTexture = ExtResource("3_v2gmf")
-RoughnessTexture = ExtResource("4_jcbur")
-TextureDetail = -1
-Triplanar = false
-metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
-
-[sub_resource type="Resource" id="Resource_p8adh"]
-script = ExtResource("5_smf0o")
-Name = "Sand"
-AlbedoTexture = ExtResource("6_tv8i1")
-NormalTexture = ExtResource("7_0vlqb")
-RoughnessTexture = ExtResource("8_gjnwh")
-TextureDetail = -1
-Triplanar = false
-metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
-
-[sub_resource type="Resource" id="Resource_oldxj"]
-script = ExtResource("9_fdqew")
-TextureSets = [SubResource("Resource_gn2wi"), SubResource("Resource_p8adh")]
-metadata/_custom_type_script = "uid://043vjblb04jf"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oldxj"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-cull_mode = 2
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("10_fdqew")
-
-[sub_resource type="QuadMesh" id="QuadMesh_4jm02"]
-material = SubResource("StandardMaterial3D_oldxj")
-center_offset = Vector3(0, 0.5, 0)
-
-[sub_resource type="Resource" id="Resource_vneqc"]
-script = ExtResource("11_gtqqq")
-Strategy = 1
-Mesh = SubResource("QuadMesh_4jm02")
-MeshScale = Vector3(1, 1, 1)
-WindStrength = 0.1
-VisualInstanceLayers = 1
-LODLevels = 3
-LODRowsPerLevel = 50
-LODInitialCellWidth = 1.0
-Albedo = Color(1, 1, 1, 1)
-AlbedoTextures = []
-NearestTextureFilter = false
-UseGroundColor = false
-CastShadow = false
-UseBrushScale = true
-RandomPlacementRange = 3.0
-ApplyOnTextureIndexes = PackedInt32Array()
-MaximumRenderDistance = 50
-EditorMaximumRenderDistance = 50
-metadata/_custom_type_script = "uid://dgf8vwa2n8r11"
-
-[sub_resource type="Resource" id="Resource_io27d"]
-script = ExtResource("12_gn2wi")
-Definition = SubResource("Resource_vneqc")
-metadata/_custom_type_script = "uid://d33x21vao7tj2"
-
-[sub_resource type="Resource" id="Resource_tv8i1"]
-script = ExtResource("10_jcbur")
-WaterFactor = 1.0
-WaterInnerOffset = 0.2
-WaterColor = Color(0.0666667, 0.0784314, 1, 1)
-WaterFresnelColor = Color(1, 1, 1, 1)
-WaterMetallic = 0.0
-WaterRoughness = 0.0
-WaterTimeScale = 0.1
-WaterStrength = 0.4
-WaterNoiseScale = 10.0
-WaterHeightScale = 0.15
-WaterColorDeep = Color(1, 1, 1, 1)
-WaterColorShallow = Color(1, 1, 1, 1)
-WaterBeersLaw = 2.0
-WaterDepthOffset = -0.75
-WaterEdgeScale = 0.1
-WaterNear = 0.5
-WaterFar = 100.0
-WaterEdgeColor = Color(1, 1, 1, 1)
-VisualInstanceLayers = 1
-metadata/_custom_type_script = "uid://k2tvfxm6feg5"
-
-[sub_resource type="Resource" id="Resource_p1hux"]
+[sub_resource type="Resource" id="Resource_of57s"]
 script = ExtResource("3_0ha60")
 ZonePosition = Vector2i(0, 0)
-HeightMapTexture = ExtResource("2_brvut")
-SplatmapsTexture = [ExtResource("11_0d4pv")]
-FoliagesTexture = [ExtResource("14_p8adh")]
-ObjectsTexture = []
-WaterTexture = ExtResource("13_smf0o")
+HeightMapTexture = ExtResource("4_p1hux")
+SplatmapsTexture = []
+FoliagesTexture = null
+ObjectsTexture = null
 
-[sub_resource type="Resource" id="Resource_of57s"]
+[sub_resource type="Resource" id="Resource_b5f6u"]
 script = ExtResource("4_4j5ol")
-Zones = [SubResource("Resource_p1hux")]
+Zones = [SubResource("Resource_of57s")]
 
 [node name="main" type="Node3D"]
 
@@ -150,108 +45,18 @@ light_color = Color(1, 1, 0.054902, 1)
 light_angular_distance = 6.0
 shadow_enabled = true
 
-[node name="TerraBrush" type="Node3D" parent="."]
-script = ExtResource("1_gl4or")
-ZonesSize = 376
-DataPath = "res://scene/Node3D"
-TextureSets = SubResource("Resource_oldxj")
-Foliages = [SubResource("Resource_io27d")]
-Objects = []
-WaterDefinition = SubResource("Resource_tv8i1")
-TerrainZones = SubResource("Resource_of57s")
-metadata/_custom_type_script = "uid://i5jcj7ukvoen"
-metadata/_edit_lock_ = false
-
 [node name="maison" parent="." instance=ExtResource("14_gtqqq")]
 transform = Transform3D(0.999821, -0.0154088, -0.0110217, 0.0154228, 0.99988, 0.00119482, 0.011002, -0.0013646, 0.999939, 2.70137, -0.47382, 0.775552)
 
 [node name="Player" parent="." instance=ExtResource("17_smf0o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.983, 1, 15.4503)
 
-[node name="Platform-ramp" type="MeshInstance3D" parent="."]
-transform = Transform3D(7, 0, 0, 0, 4.67837, 5.207, 0, -5.207, 4.67837, 54.5995, 0, 117.338)
-mesh = ExtResource("22_gtqqq")
-
-[node name="Platform-ramp2" type="MeshInstance3D" parent="."]
-transform = Transform3D(7, 0, 0, 0, 5.69604, 4.0688, 0, -4.0688, 5.69604, 54.5995, 2.46607, 124.195)
-mesh = ExtResource("22_gtqqq")
-
-[node name="Platform-ramp3" type="MeshInstance3D" parent="."]
-transform = Transform3D(7, 0, 0, 0, 6.23616, 3.17967, 0, -3.17967, 6.23616, 54.5995, 3.6472, 131.567)
-mesh = ExtResource("22_gtqqq")
-
-[node name="Platform-ramp4" type="MeshInstance3D" parent="."]
-transform = Transform3D(7, 0, 0, 0, 6.74335, 1.87808, 0, -1.87808, 6.74335, 54.5995, 3.62053, 138.856)
-mesh = ExtResource("22_gtqqq")
-
-[node name="Platform-ramp5" type="MeshInstance3D" parent="."]
-transform = Transform3D(7, 0, 0, 0, 6.95372, 0.803589, 0, -0.803589, 6.95372, 54.5995, 2.2655, 145.995)
-mesh = ExtResource("22_gtqqq")
-
-[node name="Platform-ramp6" type="MeshInstance3D" parent="."]
-transform = Transform3D(7, 0, 0, 0, 6.99403, -0.289102, 0, 0.289102, 6.99403, 54.5995, -0.24781, 152.86)
-mesh = ExtResource("22_gtqqq")
-
-[node name="Fence-straight" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0477111, -0.0504809, 5.9996, -2.26777, 5.55455, 0.0647705, -5.55472, -2.26813, 0.0250891, 55.661, 1.45714, 115.295)
-mesh = ExtResource("23_gn2wi")
-
-[node name="Fence-straight9" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0368603, 0.324272, -5.99112, 2.75463, 5.32339, 0.271183, 5.33016, -2.74888, -0.181578, 53.8016, 1.53808, 115.632)
-mesh = ExtResource("23_gn2wi")
-
-[node name="Fence-straight10" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0368603, 0.324272, -5.99112, 2.12805, 5.60243, 0.290141, 5.60982, -2.12311, -0.149429, 53.8416, 3.71883, 121.129)
-mesh = ExtResource("23_gn2wi")
-
-[node name="Fence-straight11" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0686096, 0.309513, -5.99162, 0.831798, 5.93365, 0.316044, 5.94167, -0.834251, 0.0249418, 53.8107, 5.15649, 126.703)
-mesh = ExtResource("23_gn2wi")
-
-[node name="Fence-straight12" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0686096, 0.309513, -5.99162, 0.474093, 5.97299, 0.31398, 5.98085, -0.477022, 0.0438441, 53.916, 5.69016, 132.885)
-mesh = ExtResource("23_gn2wi")
-
-[node name="Fence-straight13" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0686096, 0.309513, -5.99162, -0.685492, 5.95318, 0.299678, 5.96032, 0.681107, 0.103435, 54.069, 5.59367, 138.796)
-mesh = ExtResource("23_gn2wi")
-
-[node name="Fence-straight14" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0686096, 0.309513, -5.99162, -1.11822, 5.88768, 0.291339, 5.89448, 1.11333, 0.125009, 54.069, 4.70504, 144.816)
-mesh = ExtResource("23_gn2wi")
-
-[node name="Fence-straight15" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0686097, 0.309513, -5.99162, -1.99251, 5.65309, 0.26921, 5.65908, 1.98665, 0.167427, 54.1575, 2.91973, 150.599)
-mesh = ExtResource("23_gn2wi")
-
-[node name="Fence-straight16" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0686097, 0.309513, -5.99162, -2.26784, 5.54878, 0.260669, 5.55448, 2.26169, 0.180437, 54.1918, 0.753907, 156.354)
-mesh = ExtResource("23_gn2wi")
-
-[node name="Fence-straight2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0477112, -0.0504809, 5.9996, -1.8032, 5.72229, 0.0624874, -5.72243, -1.80358, 0.0303316, 55.6278, 3.56083, 120.886)
-mesh = ExtResource("23_gn2wi")
-
-[node name="Fence-straight3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0477112, -0.050481, 5.9996, -0.628734, 5.96671, 0.0552042, -5.96678, -0.629131, 0.0421566, 55.5499, 4.77259, 126.569)
-mesh = ExtResource("23_gn2wi")
-
-[node name="Fence-straight4" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0477112, -0.050481, 5.9996, -0.414368, 5.98543, 0.053657, -5.98549, -0.414767, 0.044109, 55.4762, 5.32635, 132.57)
-mesh = ExtResource("23_gn2wi")
-
-[node name="Fence-straight5" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.117634, -0.0522646, 5.99862, 0.153686, 5.99783, 0.0492439, -5.99688, 0.152685, 0.11893, 55.4548, 5.5317, 138.598)
-mesh = ExtResource("23_gn2wi")
-
-[node name="Fence-straight6" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.117634, -0.0522646, 5.99862, 1.57122, 5.79059, 0.0196402, -5.78943, 1.57047, 0.127215, 55.4548, 4.76224, 144.518)
-mesh = ExtResource("23_gn2wi")
-
-[node name="Fence-straight7" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.185728, 0.0706268, 5.99671, 2.25275, 5.56104, 0.00427536, -5.55794, 2.25164, -0.198657, 55.4548, 3.17641, 150.423)
-mesh = ExtResource("23_gn2wi")
-
-[node name="Fence-straight8" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.185728, 0.0706268, 5.99671, 2.25275, 5.56104, 0.00427536, -5.55794, 2.25164, -0.198657, 55.6628, 0.797307, 156.124)
-mesh = ExtResource("23_gn2wi")
+[node name="TerraBrush" type="Node3D" parent="."]
+script = ExtResource("1_gl4or")
+ZonesSize = 257
+Resolution = 4
+DataPath = "res://scene/main"
+LODInitialCellWidth = 4.0
+TerrainZones = SubResource("Resource_b5f6u")
+metadata/_custom_type_script = "uid://i5jcj7ukvoen"
+metadata/_edit_lock_ = true
