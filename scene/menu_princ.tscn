@@ -1,18 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://cep1tnabsniej"]
+[gd_scene load_steps=6 format=3 uid="uid://cep1tnabsniej"]
 
 [ext_resource type="Texture2D" uid="uid://d18djv5jcgswg" path="res://assets/img/Default-Landscape.png" id="1_wj8sv"]
-[ext_resource type="Script" path="res://script/menu_princ.gd" id="1_ybfyh"]
+[ext_resource type="Script" uid="uid://ybmlnwdup2du" path="res://script/menu_princ.gd" id="1_ybfyh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybfyh"]
 texture = ExtResource("1_wj8sv")
 modulate_color = Color(0.552956, 0.552956, 0.552956, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wj8sv"]
+resource_local_to_scene = true
 bg_color = Color(0.65834, 0.65834, 0.65834, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+shadow_size = 7
+shadow_offset = Vector2(5.02, 1.975)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybfyh"]
+resource_local_to_scene = true
+bg_color = Color(0.65834, 0.65834, 0.65834, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 10.0
+expand_margin_right = 5.0
+expand_margin_bottom = 10.0
 shadow_size = 7
 shadow_offset = Vector2(5.02, 1.975)
 
@@ -59,7 +74,6 @@ theme_override_constants/separation = 75
 alignment = 1
 
 [node name="btn_upgrade" type="Button" parent="Panel/HBoxContainer"]
-clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 5
@@ -69,17 +83,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_wj8sv")
 text = "Upgrade"
 
 [node name="btn_play" type="Button" parent="Panel/HBoxContainer"]
-clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 5
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_wj8sv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ybfyh")
 text = "Play"
 
 [node name="btn_shop" type="Button" parent="Panel/HBoxContainer"]
-clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 5
