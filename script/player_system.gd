@@ -43,6 +43,7 @@ func _physics_process(_delta):
 	# Moving the Character
 	velocity = target_velocity
 	move_and_slide()
+	
 	#movement system
 	
 func _process(_delta):
