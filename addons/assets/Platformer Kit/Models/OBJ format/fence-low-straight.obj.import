@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c6tv7gcod45g"
+path="res://.godot/imported/fence-low-straight.obj-a0f61bbd99a6c56104ebb30217e7ca78.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fence-low-straight.obj-a0f61bbd99a6c56104ebb30217e7ca78.mesh"]
+
+source_file="res://addons/assets/Platformer Kit/Models/OBJ format/fence-low-straight.obj"
+dest_files=["res://.godot/imported/fence-low-straight.obj-a0f61bbd99a6c56104ebb30217e7ca78.mesh", "res://.godot/imported/fence-low-straight.obj-a0f61bbd99a6c56104ebb30217e7ca78.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
