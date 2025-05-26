@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ckgys8bje2tp"]
+[gd_scene load_steps=42 format=3 uid="uid://ckgys8bje2tp"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_gl4or"]
 [ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="3_0ha60"]
@@ -13,13 +13,18 @@
 [ext_resource type="Script" uid="uid://043vjblb04jf" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="9_fdqew"]
 [ext_resource type="Texture2D" uid="uid://dwetldogkpobo" path="res://addons/TerraBrush1/addons/terrabrush/Assets/Icons/Ground054_1K-JPG_NormalDX.jpg" id="9_gtqqq"]
 [ext_resource type="Script" uid="uid://k2tvfxm6feg5" path="res://addons/terrabrush/Scripts/EditorResources/WaterResource.cs" id="10_jcbur"]
+[ext_resource type="Texture2D" uid="uid://0r7mljj8r4g8" path="res://addons/TerraBrush1/addons/terrabrush/Assets/Follage/sprite_0004.png" id="12_4jm02"]
+[ext_resource type="Script" uid="uid://dgf8vwa2n8r11" path="res://addons/terrabrush/Scripts/EditorResources/FoliageDefinitionResource.cs" id="13_vneqc"]
 [ext_resource type="Texture2D" uid="uid://d4inpa44rng83" path="res://scene/main/Splatmap_0_0_0.res" id="14_gn2wi"]
 [ext_resource type="PackedScene" uid="uid://dwwrtn6cc1sga" path="res://scene/maison.tscn" id="14_gtqqq"]
+[ext_resource type="Script" uid="uid://d33x21vao7tj2" path="res://addons/terrabrush/Scripts/EditorResources/FoliageResource.cs" id="14_io27d"]
 [ext_resource type="Texture2D" uid="uid://ch6qbclbcgsw4" path="res://scene/main/Water_0_0.res" id="15_p8adh"]
+[ext_resource type="Texture2D" uid="uid://onn8blatc7i1" path="res://scene/main/Foliage_0_0_0.res" id="16_fa8t4"]
 [ext_resource type="Texture2D" uid="uid://dossdc685wse" path="res://scene/main/Heightmap_0_1.res" id="17_oldxj"]
 [ext_resource type="PackedScene" uid="uid://cj07ichvcj4q6" path="res://scene/player.tscn" id="17_smf0o"]
 [ext_resource type="Texture2D" uid="uid://dmiiulipd4l4r" path="res://scene/main/Splatmap_0_1_0.res" id="18_4jm02"]
 [ext_resource type="Texture2D" uid="uid://csk4vrplmodcq" path="res://scene/main/Water_0_1.res" id="19_vneqc"]
+[ext_resource type="Texture2D" uid="uid://do0wbydg5mytw" path="res://scene/main/Foliage_0_1_0.res" id="21_rg6nf"]
 [ext_resource type="ArrayMesh" uid="uid://c5dwr0tbcohxs" path="res://addons/assets/Platformer Kit/Models/OBJ format/platform-ramp.obj" id="22_gtqqq"]
 [ext_resource type="ArrayMesh" uid="uid://bmk2rty6nb24y" path="res://addons/assets/Platformer Kit/Models/OBJ format/fence-straight.obj" id="23_gn2wi"]
 
@@ -63,6 +68,45 @@ script = ExtResource("9_fdqew")
 TextureSets = [SubResource("Resource_io27d"), SubResource("Resource_fa8t4")]
 metadata/_custom_type_script = "uid://043vjblb04jf"
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjuaj"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_color = Color(0.137255, 0.462745, 0.247059, 1)
+albedo_texture = ExtResource("12_4jm02")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gj7ui"]
+material = SubResource("StandardMaterial3D_mjuaj")
+center_offset = Vector3(0, 0.5, 0)
+
+[sub_resource type="Resource" id="Resource_bmc2w"]
+script = ExtResource("13_vneqc")
+Strategy = 2
+Mesh = SubResource("QuadMesh_gj7ui")
+MeshScale = Vector3(1, 1, 1)
+WindStrength = 0.1
+VisualInstanceLayers = 1
+LODLevels = 3
+LODRowsPerLevel = 50
+LODInitialCellWidth = 1.0
+Albedo = Color(1, 1, 1, 1)
+AlbedoTextures = null
+NearestTextureFilter = false
+UseGroundColor = false
+CastShadow = false
+UseBrushScale = true
+RandomPlacementRange = 3.0
+ApplyOnTextureIndexes = PackedInt32Array()
+MaximumRenderDistance = 50
+EditorMaximumRenderDistance = 50
+metadata/_custom_type_script = "uid://dgf8vwa2n8r11"
+
+[sub_resource type="Resource" id="Resource_7ty4q"]
+script = ExtResource("14_io27d")
+Definition = SubResource("Resource_bmc2w")
+metadata/_custom_type_script = "uid://d33x21vao7tj2"
+
 [sub_resource type="Resource" id="Resource_mjuaj"]
 script = ExtResource("10_jcbur")
 WaterFactor = 1.0
@@ -91,7 +135,7 @@ script = ExtResource("3_0ha60")
 ZonePosition = Vector2i(0, 0)
 HeightMapTexture = ExtResource("4_p1hux")
 SplatmapsTexture = [ExtResource("14_gn2wi")]
-FoliagesTexture = []
+FoliagesTexture = [ExtResource("16_fa8t4")]
 ObjectsTexture = []
 WaterTexture = ExtResource("15_p8adh")
 
@@ -100,7 +144,7 @@ script = ExtResource("3_0ha60")
 ZonePosition = Vector2i(0, 1)
 HeightMapTexture = ExtResource("17_oldxj")
 SplatmapsTexture = [ExtResource("18_4jm02")]
-FoliagesTexture = []
+FoliagesTexture = [ExtResource("21_rg6nf")]
 ObjectsTexture = []
 WaterTexture = ExtResource("19_vneqc")
 
@@ -132,10 +176,11 @@ Resolution = 4
 DataPath = "res://scene/main"
 LODInitialCellWidth = 4.0
 TextureSets = SubResource("Resource_rg6nf")
+Foliages = [SubResource("Resource_7ty4q")]
 WaterDefinition = SubResource("Resource_mjuaj")
 TerrainZones = SubResource("Resource_b5f6u")
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
-metadata/_edit_lock_ = false
+metadata/_edit_lock_ = true
 
 [node name="Platform-ramp" type="MeshInstance3D" parent="."]
 transform = Transform3D(-5.99724, 0, 0.18187, 0, 6, 0, -0.18187, 0, -5.99724, 65.4308, -1.01248, 100.608)
