@@ -98,8 +98,8 @@ script = ExtResource("3_0ha60")
 ZonePosition = Vector2i(0, 1)
 HeightMapTexture = ExtResource("17_oldxj")
 SplatmapsTexture = [ExtResource("18_4jm02")]
-FoliagesTexture = null
-ObjectsTexture = null
+FoliagesTexture = []
+ObjectsTexture = []
 WaterTexture = ExtResource("19_vneqc")
 
 [sub_resource type="Resource" id="Resource_b5f6u"]
@@ -121,7 +121,7 @@ shadow_enabled = true
 transform = Transform3D(0.999821, -0.0154088, -0.0110217, 0.0154228, 0.99988, 0.00119482, 0.011002, -0.0013646, 0.999939, 2.70137, -0.47382, 0.775552)
 
 [node name="Player" parent="." instance=ExtResource("17_smf0o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.983, 1, 15.4503)
+transform = Transform3D(-0.0122665, 0.00952837, 0.999879, -0.0226178, 0.999696, -0.00980408, -0.999669, -0.0227353, -0.0120472, 13.983, 1, 0.0305681)
 
 [node name="TerraBrush" type="Node3D" parent="."]
 script = ExtResource("1_gl4or")
