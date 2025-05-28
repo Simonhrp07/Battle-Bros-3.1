@@ -17,3 +17,8 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	await get_tree().create_timer(2).timeout
 	player = null
 	player_chase = false
+
+
+
+func tt (heal:Health):
+	print(heal.hp)

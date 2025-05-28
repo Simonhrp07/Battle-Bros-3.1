@@ -1,11 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://cj07ichvcj4q6"]
+[gd_scene load_steps=6 format=3 uid="uid://cj07ichvcj4q6"]
 
 [ext_resource type="Script" uid="uid://d3tbel3k75x3n" path="res://script/player_system.gd" id="1_xo3ru"]
 [ext_resource type="PackedScene" uid="uid://8j0pt7yyeald" path="res://addons/kaykit_character_pack_adventures/Characters/gltf/Barbarian.glb" id="2_hjaqi"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_fvtld"]
-height = 2.1449
-radius = 0.665527
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjaqi"]
+radius = 0.552724
+height = 2.65665
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjaqi"]
+bg_color = Color(0.6, 0.6, 0.6, 0.443137)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvtld"]
+bg_color = Color(0.65098, 0.0627451, 0.0392157, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 3
@@ -17,9 +32,32 @@ script = ExtResource("1_xo3ru")
 [node name="Character" parent="Pivot" instance=ExtResource("2_hjaqi")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3133, 0)
-shape = SubResource("CylinderShape3D_fvtld")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22745, 0)
+shape = SubResource("CapsuleShape3D_hjaqi")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.258819, -0.683013, 0.683013, 0, 0.707107, 0.707107, -0.965926, -0.183013, 0.183013, 5.16012, 10.8385, 2.61402)
 far = 250.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -573.0
+offset_top = -325.0
+offset_right = 577.0
+offset_bottom = 328.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 395.0
+offset_bottom = 50.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hjaqi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fvtld")
+value = 25.53
