@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://2wna1bs15afr"]
+[gd_scene load_steps=6 format=3 uid="uid://2wna1bs15afr"]
 
 [ext_resource type="PackedScene" uid="uid://wstl38g4w4mg" path="res://addons/kaykit_character_pack_adventures/Characters/gltf/Mage.glb" id="1_dy6sc"]
 [ext_resource type="Script" uid="uid://ckqxwj2777dge" path="res://script/enemy.gd" id="1_nokgg"]
+[ext_resource type="Script" uid="uid://cuq7vdptsiruk" path="res://script/component/health.gd" id="3_0a0b6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nokgg"]
 radius = 0.533713
@@ -29,6 +30,11 @@ collision_mask = 2
 
 [node name="DetectionBox" type="CollisionShape3D" parent="HitBox/Area3D"]
 shape = SubResource("SphereShape3D_ubaqv")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("3_0a0b6")
+hp = 150
+hpmax = 200
 
 [connection signal="body_entered" from="HitBox/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="HitBox/Area3D" to="." method="_on_area_3d_body_exited"]
