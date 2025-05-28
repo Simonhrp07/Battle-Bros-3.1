@@ -2,8 +2,8 @@ class_name Health
 extends Node
 
 
-var hp :int = 100
-var hpmax :int = 100
+@export var hp :int
+@export var hpmax :int 
 
 
 func _ready() -> void:
