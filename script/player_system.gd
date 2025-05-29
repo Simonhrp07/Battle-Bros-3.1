@@ -1,25 +1,33 @@
 extends CharacterBody3D
 
-
+@export var AttackSystem :Attack
+@export var HealthSystem :Health
 # How fast the player moves in meters per second.
 @export var speed = 14
 @export var xp:int =0
 @export var xpRequired :int = 1000
-@export var distanceDmg:int = 5
-@export var melleDmg:int = 12
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
 
 @export var HP :int =50
 @export var HPMax:int = 100
+@export var MDamage:int =10
+@export var DDamage:int=4
 
 
-@onready var HPBar_text=$Control/HealthBar/TextEdit
+@onready var HPBar_text=$Control/HealthBar/HPBar_Text
 		
 func _ready() -> void:
-	$HealthSystem.hpmax = HPMax
-	$Control/HealthBar.max_value = HPMax
+	HealthSystem.set_hp(HP,HPMax)
+	AttackSystem.set_dmg(MDamage,DDamage)
+	$Control/HealthBar.max_value =HPMax
+	$Control/HealthBar.value = HP
 	HPBar_text.text = str(HP)+"/" + str(HPMax)
+	$AttackSystem.meleeDmg =MDamage
+	$AttackSystem.distanceDmg = DDamage
+
+	
+	
 #movement system
 var target_velocity = Vector3.ZERO
 
@@ -29,16 +37,12 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("move_right"):
 		direction.x -= 1
-		print("d")
 	if Input.is_action_pressed("move_left"):
 		direction.x += 1
-		print("q")
 	if Input.is_action_pressed("move_forward"):
 		direction.z += 1
-		print("z")
 	if Input.is_action_pressed("move_backward"):
 		direction.z -=1
-		print("s")
 	
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()

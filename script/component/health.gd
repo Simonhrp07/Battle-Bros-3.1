@@ -6,5 +6,13 @@ extends Node
 @export var hpmax :int 
 
 
-func _ready() -> void:
-	hp = hpmax
+	
+	
+func set_hp(current_hp,max_hp):
+	hp = current_hp
+	hpmax = max_hp
+
+	
+
+func damage(attack : Attack):
+	pass

@@ -1,10 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://cj07ichvcj4q6"]
+[gd_scene load_steps=13 format=3 uid="uid://cj07ichvcj4q6"]
 
 [ext_resource type="Script" uid="uid://d3tbel3k75x3n" path="res://script/player_system.gd" id="1_xo3ru"]
 [ext_resource type="PackedScene" uid="uid://8j0pt7yyeald" path="res://addons/kaykit_character_pack_adventures/Characters/gltf/Barbarian.glb" id="2_hjaqi"]
 [ext_resource type="Texture2D" uid="uid://dsuyaregffpem" path="res://assets/img/red-heart-icon.png" id="3_ct4mp"]
 [ext_resource type="Script" uid="uid://cuq7vdptsiruk" path="res://script/component/health.gd" id="3_fvtld"]
 [ext_resource type="Script" uid="uid://bfivs7jxjecgj" path="res://script/component/exp-system.gd" id="5_s4jxa"]
+[ext_resource type="Script" uid="uid://7rh4k3j75v68" path="res://script/component/attack.gd" id="6_oh5ij"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oh5ij"]
+radius = 1.40589
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjaqi"]
 radius = 0.552724
@@ -29,24 +33,42 @@ border_width_top = 3
 border_width_bottom = 3
 border_color = Color(0, 0, 0, 1)
 
-[sub_resource type="FontVariation" id="FontVariation_ct4mp"]
+[sub_resource type="FontVariation" id="FontVariation_oh5ij"]
 variation_embolden = 1.0
+spacing_glyph = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4jxa"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_color = Color(0.125353, 0.946205, 0.574344, 1)
-corner_detail = 1
+[sub_resource type="LabelSettings" id="LabelSettings_hp4bs"]
+font = SubResource("FontVariation_oh5ij")
+font_size = 25
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(6, 3)
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AttackSystem", "HealthSystem")]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_xo3ru")
+AttackSystem = NodePath("AttackSystem")
+HealthSystem = NodePath("HealthSystem")
+HP = 125
+HPMax = 250
 
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="Character" parent="Pivot" instance=ExtResource("2_hjaqi")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="MeleeBox" type="Area3D" parent="Pivot"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/MeleeBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46446, 0.524684)
+shape = SubResource("SphereShape3D_oh5ij")
+debug_color = Color(0.957723, 1.92523e-06, 0.53103, 0.42)
+
+[node name="HitBox" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22745, 0)
 shape = SubResource("CapsuleShape3D_hjaqi")
 
@@ -68,21 +90,15 @@ offset_right = 250.0
 offset_bottom = 51.0
 theme_override_styles/background = SubResource("StyleBoxFlat_hjaqi")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fvtld")
-value = 25.53
-show_percentage = false
 
-[node name="TextEdit" type="TextEdit" parent="Control/HealthBar"]
+[node name="HPBar_Text" type="Label" parent="Control/HealthBar"]
 layout_mode = 0
-offset_left = 48.0
+offset_left = 38.0
 offset_top = 2.0
-offset_right = 212.0
+offset_right = 213.0
 offset_bottom = 37.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = SubResource("FontVariation_ct4mp")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_s4jxa")
-text = "big ass latina"
+text = "Big Ass Asian"
+label_settings = SubResource("LabelSettings_hp4bs")
 
 [node name="TextureRect" type="TextureRect" parent="Control/HealthBar"]
 layout_mode = 0
@@ -95,8 +111,11 @@ expand_mode = 1
 
 [node name="HealthSystem" type="Node" parent="."]
 script = ExtResource("3_fvtld")
-hp = 50
-hpmax = 50
 
 [node name="ExpSystem" type="Node" parent="."]
 script = ExtResource("5_s4jxa")
+
+[node name="AttackSystem" type="Node" parent="."]
+script = ExtResource("6_oh5ij")
+
+[connection signal="body_entered" from="Pivot/MeleeBox" to="AttackSystem" method="_on_melee_box_body_entered"]
