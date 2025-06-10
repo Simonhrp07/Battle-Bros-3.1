@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://s5nqbrsygyfk"]
+
+[ext_resource type="Script" uid="uid://dvsfj254ujb1t" path="res://script/script/meleeBox_comp.gd" id="1_i8ivv"]
+
+[node name="MeleeBoxComponent" type="Area3D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_i8ivv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

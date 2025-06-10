@@ -1,0 +1,171 @@
+[gd_scene load_steps=11 format=3 uid="uid://cf0vtsgax8ps3"]
+
+[ext_resource type="Texture2D" uid="uid://dsuyaregffpem" path="res://assets/img/red-heart-icon.png" id="1_eoaud"]
+[ext_resource type="StyleBox" uid="uid://cgnsmgxi1qnsj" path="res://script/texture/hud.tres" id="2_8yy0o"]
+[ext_resource type="Texture2D" uid="uid://c5thamtukupk" path="res://assets/img/exp-logo.png" id="3_2i2n8"]
+[ext_resource type="Texture2D" uid="uid://bif5bkkxjfs0k" path="res://assets/img/house-logo.png" id="4_tqra8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sq4i"]
+bg_color = Color(0.6, 0.6, 0.6, 0.443137)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvtld"]
+bg_color = Color(0.894771, 0.0404634, 0, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="FontVariation" id="FontVariation_oh5ij"]
+variation_embolden = 1.0
+spacing_glyph = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_hp4bs"]
+font = SubResource("FontVariation_oh5ij")
+font_size = 25
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(6, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ml7e8"]
+bg_color = Color(0.65098, 0.0627451, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihjo1"]
+bg_color = Color(1.8771e-06, 0.826737, 0.129614, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 653.0
+metadata/_edit_vertical_guides_ = [24.0, 252.0]
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 11.0
+offset_right = 250.0
+offset_bottom = 51.0
+theme_override_styles/background = SubResource("StyleBoxFlat_8sq4i")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fvtld")
+value = 100.0
+show_percentage = false
+
+[node name="HPBar_Text" type="Label" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.142
+anchor_right = 0.942
+anchor_bottom = 0.925
+offset_left = -0.0920029
+offset_right = 0.107986
+grow_horizontal = 2
+grow_vertical = 2
+text = "Big Ass Asian"
+label_settings = SubResource("LabelSettings_hp4bs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HealthBar"]
+layout_mode = 0
+offset_left = -29.0
+offset_top = -13.0
+offset_right = 30.0
+offset_bottom = 47.0
+texture = ExtResource("1_eoaud")
+expand_mode = 1
+
+[node name="ExpBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 65.0
+offset_right = 250.0
+offset_bottom = 108.0
+theme_override_styles/background = ExtResource("2_8yy0o")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ml7e8")
+value = 100.0
+show_percentage = false
+
+[node name="ExpBar_text" type="Label" parent="ExpBar"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 4.0
+offset_right = 212.0
+offset_bottom = 39.0
+text = "Big Ass Asian"
+label_settings = SubResource("LabelSettings_hp4bs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ExpBar"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = -10.0
+offset_right = 31.0
+offset_bottom = 50.0
+texture = ExtResource("3_2i2n8")
+expand_mode = 1
+
+[node name="HPHouse" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -258.0
+offset_top = 11.0
+offset_right = -34.0
+offset_bottom = 54.0
+grow_horizontal = 0
+theme_override_styles/background = ExtResource("2_8yy0o")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ihjo1")
+value = 100.0
+fill_mode = 1
+show_percentage = false
+
+[node name="HPHouse_text" type="Label" parent="HPHouse"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 3.0
+offset_right = 184.0
+offset_bottom = 38.0
+text = "Big Ass Asian"
+label_settings = SubResource("LabelSettings_hp4bs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HPHouse"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -44.0
+offset_top = -16.0
+offset_right = 20.0
+offset_bottom = 47.0
+grow_horizontal = 0
+texture = ExtResource("4_tqra8")
+expand_mode = 1

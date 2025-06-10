@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm6fwokr4otvu"]
+
+[ext_resource type="StyleBox" uid="uid://cgnsmgxi1qnsj" path="res://script/texture/hud.tres" id="1_leewx"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fb3k1"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmerv"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e612c"]
+bg_color = Color(0.988235, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="mob_hud" type="Sprite3D"]
+texture_filter = 0
+texture = SubResource("ViewportTexture_fb3k1")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(256, 144)
+
+[node name="Panel" type="Panel" parent="SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fmerv")
+
+[node name="mob_hpBar" type="ProgressBar" parent="SubViewport/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.055
+anchor_top = 0.426
+anchor_right = 0.973
+anchor_bottom = 0.599
+offset_left = -0.360004
+offset_top = -0.0480042
+offset_right = 0.104004
+offset_bottom = -0.152039
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = ExtResource("1_leewx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_e612c")
+value = 100.0
+show_percentage = false

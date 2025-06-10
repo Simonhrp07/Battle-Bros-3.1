@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://djlbdhat68mp5"]
+
+[ext_resource type="Script" uid="uid://caqp5niwgmh2r" path="res://script/script/chase_component.gd" id="1_iv7xj"]
+
+[node name="Area3D" type="Area3D"]
+collision_mask = 2
+script = ExtResource("1_iv7xj")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=210 format=3 uid="uid://ckgys8bje2tp"]
+[gd_scene load_steps=209 format=3 uid="uid://ckgys8bje2tp"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_gl4or"]
 [ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="3_0ha60"]
@@ -28,7 +28,6 @@
 [ext_resource type="ArrayMesh" uid="uid://c5dwr0tbcohxs" path="res://addons/assets/Platformer Kit/Models/OBJ format/platform-ramp.obj" id="22_gtqqq"]
 [ext_resource type="ArrayMesh" uid="uid://bmk2rty6nb24y" path="res://addons/assets/Platformer Kit/Models/OBJ format/fence-straight.obj" id="23_gn2wi"]
 [ext_resource type="PackedScene" uid="uid://2wna1bs15afr" path="res://scene/mob.tscn" id="28_vneqc"]
-[ext_resource type="PackedScene" uid="uid://sh1wdaddbmth" path="res://scene/spawner.tscn" id="29_io27d"]
 [ext_resource type="PackedScene" uid="uid://iac4tle0jiam" path="res://addons/assets/assets_perso/cb_arbre/arbre2.tscn" id="30_7xrs8"]
 [ext_resource type="PackedScene" uid="uid://my8phuxsykfv" path="res://addons/assets/assets_perso/cb_arbre/arbre3.tscn" id="31_kpobt"]
 [ext_resource type="PackedScene" uid="uid://ci6ijdeyp3std" path="res://addons/assets/assets_perso/cb_arbre/arbre4.tscn" id="32_216wm"]
@@ -1146,15 +1145,6 @@ shape = SubResource("ConvexPolygonShape3D_51dvs")
 
 [node name="Mob" parent="." instance=ExtResource("28_vneqc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 18)
-
-[node name="Mob2" parent="." instance=ExtResource("28_vneqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.291, 0.171613, 32.9165)
-
-[node name="Mob3" parent="." instance=ExtResource("28_vneqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6622, 1, 18)
-
-[node name="Spawner" parent="." instance=ExtResource("29_io27d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.0637, 1.01534, -8.37989)
 
 [node name="Arbre2" parent="." instance=ExtResource("30_7xrs8")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -16.9285, 0.125584, 24.9616)

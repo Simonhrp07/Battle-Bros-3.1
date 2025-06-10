@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvbunop3ioqwy"]
+
+[ext_resource type="PackedScene" uid="uid://cj07ichvcj4q6" path="res://scene/player.tscn" id="1_bp0px"]
+[ext_resource type="PackedScene" uid="uid://2wna1bs15afr" path="res://scene/mob.tscn" id="2_5u11y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2k3b"]
+albedo_color = Color(0.2, 1, 0.0862745, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fghjm"]
+material = SubResource("StandardMaterial3D_m2k3b")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bp0px"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Test" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(522.226, 0, 0, 0, 1, 0, 0, 0, 499.067, 0, -0.476865, 0)
+mesh = SubResource("BoxMesh_fghjm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_bp0px")
+
+[node name="Player" parent="." instance=ExtResource("1_bp0px")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.31311, 0.677968, 2.13695)
+
+[node name="Mob" parent="." instance=ExtResource("2_5u11y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.90758, 0.286841, -2.26341)

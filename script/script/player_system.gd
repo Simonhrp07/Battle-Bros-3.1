@@ -3,7 +3,7 @@ extends CharacterBody3D
 @export var AttackSystem :Attack
 @export var HealthSystem :Health
 # How fast the player moves in meters per second.
-@export var speed = 14
+@export var speed :float = 14
 @export var xp:int =0
 @export var xpRequired :int = 1000
 # The downward acceleration when in the air, in meters per second squared.
@@ -15,16 +15,12 @@ extends CharacterBody3D
 @export var DDamage:int=4
 
 
-@onready var HPBar_text=$Control/HealthBar/HPBar_Text
+@onready var HPBar_text=$HUD/HealthBar/HPBar_Text
 		
 func _ready() -> void:
-	HealthSystem.set_hp(HP,HPMax)
+	HealthSystem.set_hp(HPMax)
 	AttackSystem.set_dmg(MDamage,DDamage)
-	$Control/HealthBar.max_value =HPMax
-	$Control/HealthBar.value = HP
-	HPBar_text.text = str(HP)+"/" + str(HPMax)
-	$AttackSystem.meleeDmg =MDamage
-	$AttackSystem.distanceDmg = DDamage
+
 
 	
 	
@@ -33,6 +29,7 @@ var target_velocity = Vector3.ZERO
 
 func _physics_process(delta):
 	var direction = Vector3.ZERO
+
 
 
 	if Input.is_action_pressed("move_right"):
